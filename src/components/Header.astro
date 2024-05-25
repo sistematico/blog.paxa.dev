@@ -1,19 +1,19 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from '@/components/HeaderLink.astro';
+import { SITE_TITLE } from '@/consts';
 ---
 
 <header>
 	<nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="/">Início</HeaderLink>
+			<HeaderLink href="/posts">Blog</HeaderLink>
+			<HeaderLink href="/sobre">Sobre</HeaderLink>
 		</div>
 		<div class="social-links">
-			<a href="https://m.webtoo.ls/@astro" target="_blank">
-				<span class="sr-only">Follow Astro on Mastodon</span>
+			<a href="https://mastodon.social/@sistematico" target="_blank">
+				<span class="sr-only">Follow Sistematico on Mastodon</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
 						fill="currentColor"
@@ -21,8 +21,8 @@ import { SITE_TITLE } from '../consts';
 					></path></svg
 				>
 			</a>
-			<a href="https://twitter.com/astrodotbuild" target="_blank">
-				<span class="sr-only">Follow Astro on Twitter</span>
+			<a href="https://twitter.com/sistematico" target="_blank">
+				<span class="sr-only">Follow Sistematico on Twitter</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
 						fill="currentColor"
@@ -30,8 +30,8 @@ import { SITE_TITLE } from '../consts';
 					></path></svg
 				>
 			</a>
-			<a href="https://github.com/withastro/astro" target="_blank">
-				<span class="sr-only">Go to Astro's GitHub repo</span>
+			<a href="https://github.com/sistematico" target="_blank">
+				<span class="sr-only">Go to Sistematico's GitHub repo</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
 						fill="currentColor"
@@ -46,9 +46,11 @@ import { SITE_TITLE } from '../consts';
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
+		/* background: rgba(red, green, blue, .5); */
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		filter: blur(10%);
 	}
+
 	h2 {
 		margin: 0;
 		font-size: 1em;
@@ -58,25 +60,35 @@ import { SITE_TITLE } from '../consts';
 	h2 a.active {
 		text-decoration: none;
 	}
+
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		/* position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		right: 0; */
 	}
+
 	nav a {
 		padding: 1em 0.5em;
 		color: var(--black);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
 	}
+
 	nav a.active {
 		text-decoration: none;
 		border-bottom-color: var(--accent);
 	}
+
 	.social-links,
 	.social-links a {
 		display: flex;
 	}
+
 	@media (max-width: 720px) {
 		.social-links {
 			display: none;
