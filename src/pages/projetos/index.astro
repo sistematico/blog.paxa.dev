@@ -1,0 +1,19 @@
+---
+// import { getEntry, getEntries } from 'astro:content';
+// const entries = await getEntry('projetos', 'data');
+// const projetos = await getEntries(entries.data);
+
+import { projetos as p } from '@/content/projetos/data.json';
+
+---
+<ul>
+  {p.map(projeto => (
+    <li>
+      Projeto: 
+      <a href={`/projetos/${projeto.slug}`}>{projeto.title}</a>
+      {/* <time datetime={blogPostEntry.data.publishedDate.toISOString()}> */}
+        {projeto.title}
+      {/* </time> */}
+    </li>
+  ))}
+</ul>
