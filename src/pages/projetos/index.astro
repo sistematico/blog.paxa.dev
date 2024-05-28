@@ -1,44 +1,18 @@
 ---
 import '@/styles/scss/card.scss';
-import Base from '@/layouts/base.astro'
-import Card from '@/components/card.astro'
-import { projectData } from './data';
+import Base from '@/layouts/base.astro';
+import Card from '@/components/card.astro';
+import { fetchGitHubProjects, type Project } from '@/utils/github.ts';
+
+const projetos: Project[] = await fetchGitHubProjects('sistematico', ['AJAX'], true);
 ---
 
 <Base title="Projetos" description="Alguns projetos meus" hero="/img/posts/The Combat of the Giaour and the Pasha.jpg">
-  { projectData.length > 0 && (
+  { projetos.length > 0 && (
     <div class="grid">
-      {projectData.map((i) => (
-        <a href={i.href} target="_blank">
-          <Card name={i.name} desc={i.description} />
-        </a>
+      {projetos.map((i) => (
+        <Card name={i.name} desc={i.description} url={i.html_url} />
       ))}
     </div>
   )}
 </Base>
-
-
-
-
-<!-- <article>
-  <div class="hero-image">
-    {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-  </div>
-  <div class="prose">
-    <div class="title">
-      <div class="date">
-        <FormattedDate date={pubDate} />
-        {
-          updatedDate && (
-            <div class="last-updated-on">
-              Last updated on <FormattedDate date={updatedDate} />
-            </div>
-          )
-        }
-      </div>
-      <h1>{title}</h1>
-      <hr />
-    </div>
-    <slot />
-  </div>
-</article> -->

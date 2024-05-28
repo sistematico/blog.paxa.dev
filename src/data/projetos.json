@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Projeto 1",
+    "description": "Descrição do Projeto 1",
+    "href": "https://github.com/user/projeto1"
+  },
+  {
+    "id": 2,
+    "title": "Projeto 2",
+    "description": "Descrição do Projeto 2",
+    "href": "https://github.com/user/projeto2"
+  }
+]
