@@ -1,0 +1,28 @@
+---
+import '@/styles/css/base.css';
+import Head from '@/layouts/head.astro';
+import Header from '@/components/header.astro';
+import Footer from '@/components/footer.astro';
+const { title, description, hero } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <article>
+        {hero && 
+          <div class="hero-image">
+            <img width={1020} height={510} src={hero} alt={title} />
+          </div>
+        }
+        <slot />
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

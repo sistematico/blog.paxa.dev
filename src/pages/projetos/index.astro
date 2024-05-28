@@ -1,19 +1,44 @@
 ---
-// import { getEntry, getEntries } from 'astro:content';
-// const entries = await getEntry('projetos', 'data');
-// const projetos = await getEntries(entries.data);
-
-import { projetos as p } from '@/content/projetos/data.json';
-
+import '@/styles/scss/card.scss';
+import Base from '@/layouts/base.astro'
+import Card from '@/components/card.astro'
+import { projectData } from './data';
 ---
-<ul>
-  {p.map(projeto => (
-    <li>
-      Projeto: 
-      <a href={`/projetos/${projeto.slug}`}>{projeto.title}</a>
-      {/* <time datetime={blogPostEntry.data.publishedDate.toISOString()}> */}
-        {projeto.title}
-      {/* </time> */}
-    </li>
-  ))}
-</ul>
+
+<Base title="Projetos" description="Alguns projetos meus" hero="/img/posts/The Combat of the Giaour and the Pasha.jpg">
+  { projectData.length > 0 && (
+    <div class="grid">
+      {projectData.map((i) => (
+        <a href={i.href} target="_blank">
+          <Card name={i.name} desc={i.description} />
+        </a>
+      ))}
+    </div>
+  )}
+</Base>
+
+
+
+
+<!-- <article>
+  <div class="hero-image">
+    {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+  </div>
+  <div class="prose">
+    <div class="title">
+      <div class="date">
+        <FormattedDate date={pubDate} />
+        {
+          updatedDate && (
+            <div class="last-updated-on">
+              Last updated on <FormattedDate date={updatedDate} />
+            </div>
+          )
+        }
+      </div>
+      <h1>{title}</h1>
+      <hr />
+    </div>
+    <slot />
+  </div>
+</article> -->
