@@ -2,9 +2,10 @@
 import '@/styles/scss/card.scss';
 import Base from '@/layouts/base.astro';
 import Card from '@/components/card.astro';
-import { fetchGitHubProjects, type Project } from '@/utils/github.ts';
+import { fetchGitHubProjects } from '@/utils/github';
+import type { Project } from '@/types';
 
-const projetos: Project[] = await fetchGitHubProjects('sistematico', ['AJAX'], true);
+const projetos: Project[] = await fetchGitHubProjects('sistematico', ['AJAX-Chat'], true);
 ---
 
 <Base title="Projetos" description="Alguns projetos meus" hero="/img/posts/The Combat of the Giaour and the Pasha.jpg">
