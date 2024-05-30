@@ -1,7 +1,8 @@
 ---
 import Logo from '@/components/logo.astro';
 import Nav from '@/components/nav.astro';
-import { SITE_TITLE } from '@/consts';
+const title = import.meta.env.PUBLIC_APP_NAME;
+const description = import.meta.env.PUBLIC_APP_DESC;
 ---
 
 <header>
@@ -9,10 +10,7 @@ import { SITE_TITLE } from '@/consts';
     <div class="logo">
       <a href="/">
         <Logo />
-        <img src="">
-        <h2>
-          {SITE_TITLE}
-        </h2>
+        <h2>{title}</h2>
       </a>
     </div>
     <div class="nav-links">
@@ -80,10 +78,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.nav-links {
-  margin: 0;
+  margin: 0 1em;
 }
 
 nav a {
@@ -105,20 +100,10 @@ nav a.active {
 }
 
 @media (max-width: 720px) {
-  header {
-    padding: 0 .2em;
-  }
-
-  .logo a h2 {
-    display: none;
-  }
-
-  nav a {
-    padding: .4em 0.25em;
-  }
-
-  .social-links {
-    display: none;
-  }
+  header { padding: 0 .2em; }
+  .logo a h2 { display: none; }
+  nav { margin: 0 .5em; }
+  nav a { padding: .4em 0.25em; }
+  .social-links { display: none; }
 }
 </style>

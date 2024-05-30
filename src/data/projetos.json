@@ -1,0 +1,12 @@
+[
+  {
+    "name": "AgroComm",
+    "desc": "Commodities Agropecuárias",
+    "href": "https://github.com/sistematico/agrocomm"
+  },
+  {
+    "name": "FIPE",
+    "desc": "Tabela FIPE",
+    "href": "https://github.com/sistematico/fipe"
+  }
+]

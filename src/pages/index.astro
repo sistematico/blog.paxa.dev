@@ -2,13 +2,14 @@
 import Head from '@/layouts/head.astro';
 import Header from '@/components/header.astro';
 import Footer from '@/components/footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
+const title = import.meta.env.PUBLIC_APP_NAME;
+const description = import.meta.env.PUBLIC_APP_DESC;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<Head title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<Head title={title} description={description} />
 	</head>
 	<body>
 		<Header />

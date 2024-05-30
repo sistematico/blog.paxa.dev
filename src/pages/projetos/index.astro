@@ -2,17 +2,14 @@
 import '@/styles/scss/card.scss';
 import Base from '@/layouts/base.astro';
 import Card from '@/components/card.astro';
-import { fetchGitHubProjects } from '@/utils/github';
-import type { Project } from '@/types';
-
-const projetos: Project[] = await fetchGitHubProjects('sistematico', ['AJAX-Chat'], true);
+import projetos from '@/data/projetos.json';
 ---
 
 <Base title="Projetos" description="Alguns projetos meus">
   { projetos.length > 0 && (
     <div class="grid">
       {projetos.map((i) => (
-        <Card name={i.name} desc={i.description} url={i.html_url} />
+        <Card name={i.name} desc={i.desc} url={i.href} />
       ))}
     </div>
   )}
