@@ -15,7 +15,7 @@ import { SITE_TITLE } from '@/consts';
         </h2>
       </a>
     </div>
-    <div class="internal-links">
+    <div class="nav-links">
       <Nav href="/">Início</Nav>
       <Nav href="/posts">Blog</Nav>
       <Nav href="/projetos">Projetos</Nav>
@@ -60,7 +60,7 @@ import { SITE_TITLE } from '@/consts';
 
 header {
   margin: 0;
-  padding: 0 1em;
+  /* padding: 0 1em; */
   background: rgba(0, 0, 0, .5);
   box-shadow: 0 2px 8px rgba(var(--black), 5%);
   filter: blur(10%);
@@ -82,8 +82,12 @@ nav {
   justify-content: space-between;
 }
 
+.nav-links {
+  margin: 0;
+}
+
 nav a {
-  padding: .7em .5em;
+  padding: .9em .3em;
   color: var(--black);
   border-bottom: 4px solid transparent;
   text-decoration: none;
@@ -91,7 +95,8 @@ nav a {
 
 nav a.active {
   text-decoration: none;
-  border-bottom-color: var(--border);
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 .social-links,

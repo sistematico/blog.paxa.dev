@@ -1,11 +1,11 @@
-@import url("fonts");
+@import "fonts";
 
 :root {
 	--fg: #dfdfdf;
 	--bg: #1e2326;
 	--secondary-fg: #fff;
 	--secondary-bg: #1e2326;
-	--accent: #e67e80;
+	--accent: #a7c080;
 	--border: #201D1C;
 	--sand-rgb: 42, 36, 32;
 	--black: 15, 18, 25;
@@ -27,7 +27,7 @@ body {
 	color: var(--fg);
 	background-color: var(--bg);
 	font-size: 18px;
-	line-height: 1.6;
+	// line-height: 1.6;
 }
 
 main {
