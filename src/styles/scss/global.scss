@@ -1,13 +1,12 @@
-@import url("fonts.css");
+@import url("fonts");
 
 :root {
-	--title-fg: #dfdfdf;
-	--code-bg: #342C27;
-	--border-bg: #201D1C;
-	--foreground: #fff;
+	--fg: #dfdfdf;
+	--bg: #1e2326;
 	--secondary-fg: #fff;
-	--background: #2A2420;
-	--accent: #dfdfdf;
+	--secondary-bg: #1e2326;
+	--accent: #e67e80;
+	--border: #201D1C;
 	--sand-rgb: 42, 36, 32;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
@@ -25,8 +24,8 @@ body {
 	/* background-size: 100% 600px; */
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: var(--foreground);
-	background-color: var(--background);
+	color: var(--fg);
+	background-color: var(--bg);
 	font-size: 18px;
 	line-height: 1.6;
 }
@@ -36,73 +35,32 @@ main {
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
-	/* padding: 6em 3em 3em 1em; */
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 0.5rem 0;
 	color: rgb(var(--title-fg));
 	line-height: 1.2;
 }
 
-h1 {
-	font-size: 3.052em;
-}
-
-h2 {
-	font-size: 2.441em;
-}
-
-h3 {
-	font-size: 1.953em;
-}
-
-h4 {
-	font-size: 1.563em;
-}
-
-h5 {
-	font-size: 1.25em;
-}
-
-strong,
-b {
-	font-weight: 700;
-}
-
-a {
-	color: var(--accent);
-}
-
-a:hover {
-	color: var(--accent);
-}
-
-p {
-	margin-bottom: 1em;
-}
-
-.prose p {
-	margin-bottom: 2em;
-}
+h1 { font-size: 3.052em; }
+h2 { font-size: 2.441em; }
+h3 { font-size: 1.953em; }
+h4 { font-size: 1.563em; }
+h5 { font-size: 1.25em; }
+strong, b {	font-weight: 700; }
+a {	color: var(--accent); }
+a:hover {	color: var(--accent); }
+p {	margin-bottom: 1em; }
+.prose p { margin-bottom: 2em; }
 
 textarea {
 	width: 100%;
 	font-size: 16px;
 }
 
-input {
-	font-size: 16px;
-}
-
-table {
-	width: 100%;
-}
+input {	font-size: 16px; }
+table {	width: 100%; }
 
 img {
 	max-width: 100%;
@@ -112,7 +70,7 @@ img {
 
 code {
 	padding: 2px 5px;
-	background-color: rgb(var(--code-bg));
+	background-color: rgb(var(--secondary-bg));
 	border-radius: 2px;
 }
 
@@ -121,9 +79,7 @@ pre {
 	border-radius: 8px;
 }
 
-pre > code {
-	all: unset;
-}
+pre > code { all: unset; }
 
 blockquote {
 	border-left: 4px solid var(--accent);
@@ -134,7 +90,7 @@ blockquote {
 
 hr {
 	border: none;
-	border-top: 1px solid rgb(var(--border-bg));
+	border-top: 1px solid rgb(var(--border));
 }
 
 @media (max-width: 720px) {
