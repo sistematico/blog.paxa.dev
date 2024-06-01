@@ -7,13 +7,55 @@ import FormattedDate from '@/components/date.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, created, updated, heroImage } = Astro.props;
 ---
+
+<script>
+  let copyButtonLabel = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"> \
+    <path fill="currentColor" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/> \
+    <path fill="currentColor" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/> \
+  </svg>';
+
+  let codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+  for (let codeBlock of codeBlocks) {
+    let wrapper = document.createElement("div");
+    wrapper.style.position = "relative";
+
+    let copyButton = document.createElement("button");
+    copyButton.className = "copy-code";
+    copyButton.innerHTML = copyButtonLabel;
+
+    codeBlock.setAttribute("tabindex", "0");
+    codeBlock.appendChild(copyButton);
+    // wrap codebock with relative parent element
+    codeBlock.parentNode?.insertBefore(wrapper, codeBlock);
+    wrapper.appendChild(codeBlock);
+
+    copyButton.addEventListener("click", async () => {
+      await copyCode(codeBlock, copyButton);
+    });
+  }
+
+async function copyCode(block: HTMLElement, button: HTMLElement) {
+    let code = block.querySelector("code");
+    let text = code?.innerText;
+
+		await navigator.clipboard.writeText(text ?? '');
+
+    // visual feedback that task is completed
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 5l-8 8l-4-4l1.5-1.5L4 10l6.5-6.5L12 5z" fill="currentColor"/></svg>';
+
+    setTimeout(() => {
+      button.innerHTML = copyButtonLabel;
+    }, 700);
+  }
+</script>
 
 <html lang="en">
 	<head>
 		<Head title={title} description={description} />
-		<style>
+		<!-- <style>
 			main {
 				width: calc(100% - 2em);
 				max-width: 100%;
@@ -58,24 +100,23 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.last-updated-on {
 				font-style: italic;
 			}
-		</style>
+		</style> -->
 	</head>
-
 	<body>
 		<Header />
 		<main>
 			<article>
 				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+					{heroImage && <img width={1020} height={510} src={heroImage} alt={title} />}
 				</div>
 				<div class="prose">
 					<div class="title">
 						<div class="date">
-							<FormattedDate date={pubDate} />
+							<FormattedDate date={created} />
 							{
-								updatedDate && (
+								updated && (
 									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
+										Atualizado em <FormattedDate date={updated} />
 									</div>
 								)
 							}

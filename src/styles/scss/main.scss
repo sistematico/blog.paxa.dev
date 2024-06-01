@@ -20,14 +20,11 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	/* background: linear-gradient(var(--sand-gradient)) no-repeat; */
-	/* background-size: 100% 600px; */
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: var(--fg);
 	background-color: var(--bg);
 	font-size: 18px;
-	// line-height: 1.6;
 }
 
 main {
@@ -74,12 +71,13 @@ code {
 	border-radius: 2px;
 }
 
-pre {
-	padding: 1.5em;
-	border-radius: 8px;
-}
+// pre {
+// 	// padding: 1.5em;
+// 	// border-radius: 8px;
+// 	margin-bottom: 2em;
+// }
 
-pre > code { all: unset; }
+// pre > code { all: unset; }
 
 blockquote {
 	border-left: 4px solid var(--accent);
@@ -91,6 +89,63 @@ blockquote {
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--border));
+}
+
+.expressive-code {
+	margin-bottom: 2em;
+}
+
+.expressive-code pre {
+	border: none;
+}
+
+.expressive-code pre > code {
+	margin-bottom: 2em;
+	border: 10px solid red;
+}
+
+.hero-image {
+  width: 100%;
+}
+
+.hero-image img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+}
+
+.prose {
+  width: 720px;
+  max-width: calc(100% - 2em);
+  margin: auto;
+  padding: 1em;
+  color: rgb(var(--foreground));
+}
+
+.title {
+  margin-bottom: 1em;
+  padding: 1em 0;
+  text-align: center;
+  line-height: 1;
+}
+
+.title h1 {
+  margin: 0 0 0.5em 0;
+}
+
+.date {
+  margin-bottom: 0.5em;
+  color: rgb(var(--gray));
+}
+
+.last-updated-on {
+  font-style: italic;
+}
+
+.astro-code {
+	max-height: 350px;
+	overflow: auto;
 }
 
 @media (max-width: 720px) {

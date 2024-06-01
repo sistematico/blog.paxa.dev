@@ -1,0 +1,19 @@
+.copy-code {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+	color: #2a3034;
+  background-color: #181c1e;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+	border: #2a3034 solid 2px;
+	border-radius: 8px;
+  animation: all 1s ease;
+}
+
+.copy-code:hover {
+  color: #fff;
+  // background-color: #312e81;
+}
+

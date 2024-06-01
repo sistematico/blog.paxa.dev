@@ -10,14 +10,20 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.7.0",
     "@astrojs/mdx": "^3.0.1",
     "@astrojs/rss": "^4.0.6",
     "@astrojs/sitemap": "^3.1.5",
+    "@expressive-code/plugin-collapsible-sections": "^0.35.3",
+    "@expressive-code/plugin-line-numbers": "^0.35.3",
+    "@expressive-code/plugin-text-markers": "^0.35.3",
     "astro": "^4.9.1",
-    "@astrojs/check": "^0.7.0",
+    "astro-expressive-code": "^0.35.3",
+    "shiki": "^1.6.1",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
+    "rehype-pretty-code": "^0.13.2",
     "sass": "^1.77.2"
   }
 }
