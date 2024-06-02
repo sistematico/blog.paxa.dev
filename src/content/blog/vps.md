@@ -2,6 +2,7 @@
 title: 'Protegendo sua VPS com o Rocky Linux 9'
 description: 'Protegendo sua VPS com o FirewallD, SELinux e Fail2Ban'
 created: 'May 31 2024'
+pubDate: 'May 31 2024'
 heroImage: '/posts/images/rocky.png'
 published: true
 # layout: "../../layouts/blog.astro"

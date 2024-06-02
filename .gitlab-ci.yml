@@ -1,13 +1,24 @@
 image: node:lts
 
 before_script:
+  - corepack enable
+  - corepack prepare pnpm@latest-9 --activate
+  - pnpm config set store-dir .pnpm-store
+  
   - echo "GITHUB_TOKEN=$GITHUB_TOKEN" > .env
   - rm -rf node_modules public dist
-  - npm install
+  - pnpm install
 
 pages:
   script:
-    - npm run build
+    - pnpm run build
+
+  cache:
+    key:
+      files:
+        - pnpm-lock.yaml
+    paths:
+      - .pnpm-store
 
   artifacts:
     paths:
