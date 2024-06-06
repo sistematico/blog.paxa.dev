@@ -15,6 +15,13 @@
   --gray-light: 229, 233, 240;
   --gray-dark: 34, 41, 57;
   --box-shadow: 0 2px 6px rgba(255, 255, 255, 25%), 0 8px 24px rgba(255, 255, 255, 33%), 0 16px 32px rgba(255, 255, 255, 33%);
+  --red: 230, 126, 128;
+  --orange: 230, 152, 117;
+  --yellow: 219, 188, 127;
+  --green: 167, 192, 128;
+  --blue: 127, 187, 179;
+  --aqua: 131, 192, 146;
+  --purple: 214, 153, 182;
 }
 
 body {
@@ -63,9 +70,59 @@ h4 { font-size: 1.563em; }
 h5 { font-size: 1.25em; }
 strong, b {	font-weight: 700; }
 
-a {	
-  color: rgb(var(--accent)); 
-  transition: all .5s ease-in-out;
+// .nav-links a {
+//   display: inline-block;
+// 	text-decoration: none;
+// }
+
+// .nav-links a:nth-child(1) {
+//   color: red;
+// }
+
+a {
+  transition: all 350ms ease;
+}
+
+a, a:hover {
+  color: rgb(var(--accent));
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 .3em;
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+  line-height: 3em;
+}
+
+nav a.active {
+  color: rgb(var(--accent));
+  border-bottom-color: rgb(var(--accent));
+}
+
+nav a:nth-child(1).active,
+nav a:nth-child(1):hover {
+  color: rgb(var(--green));
+  border-bottom-color: rgb(var(--green));
+}
+
+nav a:nth-child(2).active,
+nav a:nth-child(2):hover {
+  color: rgb(var(--yellow));
+  border-bottom-color: rgb(var(--yellow));
+}
+
+nav a:nth-child(3).active,
+nav a:nth-child(3):hover {
+  color: rgb(var(--red));
+  border-bottom-color: rgb(var(--red));
+}
+
+nav a:nth-child(4).active,
+nav a:nth-child(4):hover {
+  color: rgb(var(--purple));
+  border-bottom-color: rgb(var(--purple));
 }
 
 a:hover {	color: rgb(var(--accent-hover)); }
@@ -112,8 +169,7 @@ hr {
 }
 
 .title {
-  // margin-bottom: 1em;
-  // padding: 1em 0;
+  margin-bottom: 0;
   text-align: center;
   line-height: 1;
 }
@@ -131,9 +187,13 @@ hr {
   font-style: italic;
 }
 
-.astro-code {
-  max-height: 350px;
-  overflow: auto;
+.badge {
+  text-decoration: none;
+  background-color: rgb(var(--secondary-bg));
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
 }
 
 footer {

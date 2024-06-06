@@ -16,6 +16,7 @@ const title = import.meta.env.PUBLIC_APP_NAME;
     <div class="nav-links">
       <Nav href="/">Início</Nav>
       <Nav href="/posts">Blog</Nav>
+      <Nav href="/snippets">Snippets</Nav>
       <Nav href="/projetos">Projetos</Nav>
     </div>
     <div class="social-links">
@@ -38,7 +39,15 @@ const title = import.meta.env.PUBLIC_APP_NAME;
 .logo a {
   display: flex;
   align-items: center;
+  color: #fff;
+  text-decoration: none;
   gap: 3px;
+  border: none;
+}
+
+.logo a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 header {
@@ -58,18 +67,9 @@ nav {
   margin: 0 1em;
 }
 
-nav a {
-  padding: 0 .3em;
-  color: var(--black);
-  border-bottom: 4px solid transparent;
+nav a,
+nav a:hover {
   text-decoration: none;
-  line-height: 3em;
-}
-
-nav a.active {
-  text-decoration: none;
-  color: rgb(var(--accent));
-  border-bottom-color: rgb(var(--accent));
 }
 
 h2 {
