@@ -1,24 +1,13 @@
-image: node:lts
+image: oven/bun:alpine
 
 before_script:
-  - corepack enable
-  - corepack prepare pnpm@latest-9 --activate
-  - pnpm config set store-dir .pnpm-store
-  
   - echo "GITHUB_TOKEN=$GITHUB_TOKEN" > .env
   - rm -rf node_modules public dist
-  - pnpm install
+  - bun install
 
 pages:
   script:
-    - pnpm run build
-
-  cache:
-    key:
-      files:
-        - pnpm-lock.yaml
-    paths:
-      - .pnpm-store
+    - bun run build
 
   artifacts:
     paths:
