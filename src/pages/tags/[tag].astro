@@ -1,19 +1,51 @@
 ---
-import BaseLayout from '@/layouts/base.astro';
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/base.astro';
+import type { CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
-  return [
-    { params: { tag: "astro" } },
-    { params: { tag: "successes" } },
-    { params: { tag: "community" } },
-    { params: { tag: "blogging" } },
-    { params: { tag: "setbacks" } },
-    { params: { tag: "learning in public" } },
-  ];
+  const allPosts = await getCollection('blog');
+
+  const tags: string[] = [];
+
+  allPosts.forEach((post) => {
+    post.data.tags.forEach((tag) => {
+      tags.push(tag.toLowerCase());
+    });
+  });
+
+  return Array.from(new Set(tags)).map((tag) => {
+    return {
+      params: { tag },
+      props: {
+        blogposts: allPosts.filter((post) =>
+          post.data.tags.map((tag) => tag.toLowerCase()).includes(tag),
+        ),
+      },
+    };
+  });
+}
+
+interface Props {
+  tag: string;
+  blogposts: CollectionEntry<"blog">[];
 }
 
 const { tag } = Astro.params;
+const { blogposts } = Astro.props;
 ---
-<BaseLayout pageTitle={tag}>
-  <p>Posts tagged with {tag}</p>
-</BaseLayout>
+
+<Layout>
+  <main>
+    <h1>Posts tagged with {tag}</h1>
+    <ul>
+      {
+        blogposts.map((post) => (
+          <li>
+            <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

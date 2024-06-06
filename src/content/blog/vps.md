@@ -5,7 +5,9 @@ created: 'May 31 2024'
 pubDate: 'May 31 2024'
 heroImage: '/posts/images/rocky.png'
 published: true
-# layout: "../../layouts/blog.astro"
+tags: 
+  - astro
+  - devel
 ---
 
 ## Servidor

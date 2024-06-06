@@ -23,6 +23,7 @@ const posts = (await getCollection('blog'))
 			main {
 				width: 960px;
 			}
+
 			ul {
 				display: flex;
 				flex-wrap: wrap;
@@ -31,39 +32,48 @@ const posts = (await getCollection('blog'))
 				margin: 0;
 				padding: 0;
 			}
+			
 			ul li {
 				width: calc(50% - 1rem);
 			}
+			
 			ul li * {
 				text-decoration: none;
 				transition: 0.2s ease;
 			}
+			
 			ul li:first-child {
 				width: 100%;
 				margin-bottom: 1rem;
 				text-align: center;
 			}
+			
 			ul li:first-child img {
 				width: 100%;
 			}
+			
 			ul li:first-child .title {
 				font-size: 2.369rem;
 			}
+			
 			ul li img {
 				margin-bottom: 0.5rem;
 				border-radius: 12px;
 			}
+			
 			ul li a {
 				display: block;
 			}
 
-			.title {
+			.date {
 				margin: 0;
-				color: rgb(var(--fg));
-				line-height: 1;
+				color: rgb(var(--secondary-fg));
 			}
 
-			.date {
+			.tags {
+				display: flex;
+				justify-content: center;
+				gap: 1em;
 				margin: 0;
 				color: rgb(var(--secondary-fg));
 			}
@@ -103,8 +113,19 @@ const posts = (await getCollection('blog'))
 						posts.map((post) => (
 							<li>
 								<a href={`/posts/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
+									<img width={720} height={360} src={post.data.heroImage} alt={post.data.title} />
 									<h4 class="title">{post.data.title}</h4>
+									<div class="tags">
+										{post.data.tags.length > 1 ? 'Tags: ' : 'Tag: '}
+
+										{
+											post.data.tags.map((tag) => (
+												<a href={`/tags/${tag}/`}>
+													{tag}
+												</a>
+											))
+										}
+									</div>
 									<p class="date">
 										<FormattedDate date={post.data.created} />
 									</p>

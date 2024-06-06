@@ -4,6 +4,9 @@ description: 'Lorem ipsum dolor sit amet'
 created: 'Jul 15 2022'
 pubDate: 'Jul 15 2022'
 heroImage: '/blog-placeholder-4.jpg'
+tags: 
+  - astro
+  - devel
 published: false
 ---
 
