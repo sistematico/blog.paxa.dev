@@ -57,21 +57,12 @@ const description = import.meta.env.PUBLIC_APP_DESC;
 }
 
 header {
-  margin: 0;
-  /* padding: 0 1em; */
-  background: rgba(0, 0, 0, .5);
-  box-shadow: 0 2px 8px rgba(var(--black), 5%);
-  filter: blur(10%);
-}
-
-h2 {
-  margin: 0;
-  font-size: 1.4em;
-}
-
-h2 a,
-h2 a.active {
-  text-decoration: none;
+  position: sticky;
+  top: 0;
+  background: rgba(var(--bg), .75);
+  /* box-shadow: 0 2px 8px rgba(var(--black), 5%); */
+  backdrop-filter: blur(10px);
+  z-index: 9999;
 }
 
 nav {
@@ -82,16 +73,27 @@ nav {
 }
 
 nav a {
-  padding: .9em .3em;
+  padding: 0 .3em;
   color: var(--black);
   border-bottom: 4px solid transparent;
   text-decoration: none;
+  line-height: 3em;
 }
 
 nav a.active {
   text-decoration: none;
   color: var(--accent);
   border-bottom-color: var(--accent);
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+h2 a,
+h2 a.active {
+  text-decoration: none;
 }
 
 .social-links,

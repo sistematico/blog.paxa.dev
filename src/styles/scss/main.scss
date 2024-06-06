@@ -1,10 +1,10 @@
 @import "fonts";
 
 :root {
-	--fg: #dfdfdf;
-	--bg: #1e2326;
-	--secondary-fg: #fff;
-	--secondary-bg: #1e2326;
+	--fg: 223, 223, 223;
+	--bg: 42, 36, 32;
+	--secondary-fg: 255, 255, 255;
+	--secondary-bg: 42, 36, 32;
 	--accent: #a7c080;
 	--border: #201D1C;
 	--sand-rgb: 42, 36, 32;
@@ -17,13 +17,14 @@
 
 body {
 	font-family: 'Nunito', sans-serif;
+	// font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 	margin: 0;
 	padding: 0;
 	text-align: left;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: var(--fg);
-	background-color: var(--bg);
+	color: rgb(var(--fg));
+	background-color: rgb(var(--bg));
 	font-size: 18px;
 }
 
