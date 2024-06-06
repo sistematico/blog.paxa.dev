@@ -1,5 +1,4 @@
 ---
-import '@/styles/scss/card.scss';
 import Base from '@/layouts/base.astro';
 import Card from '@/components/card.astro';
 import projetos from '@/data/projetos.json';
@@ -7,9 +6,9 @@ import projetos from '@/data/projetos.json';
 
 <Base title="Projetos" description="Alguns projetos meus">
   { projetos.length > 0 && (
-    <div class="grid">
+    <div class="project-grid">
       {projetos.map((i) => (
-        <Card name={i.name} desc={i.desc} url={i.href} />
+        <Card name={i.name} desc={i.desc} href={i.href} />
       ))}
     </div>
   )}

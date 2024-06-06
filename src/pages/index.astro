@@ -1,39 +1,28 @@
 ---
-import Head from '@/layouts/head.astro';
-import Header from '@/components/header.astro';
-import Footer from '@/components/footer.astro';
+import Base from "@/layouts/base.astro";
 const title = import.meta.env.PUBLIC_APP_NAME;
 const description = import.meta.env.PUBLIC_APP_DESC;
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<Head title={title} description={description} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🌵 Olá, Peregrino!</h1>
-			<p>
-				Bem-vindo ao oásis digital do Paxá! Aqui no blog, 
-				navegamos pelas vastas dunas da tecnologia, explorando o império do desenvolvimento web, 
-				programação e administração de sistemas com uma pitada de cultura geek.
-			</p>
-			<p>
-				Este espaço é uma extensão do meu trabalho como Desenvolvedor Web, onde compartilho artigos, dicas, 
-				snippets de código e alguns bookmarks. Se você é um nômade digital em busca de conhecimento, está 
-				no lugar certo!
-			</p>
-			<p>
-				No blog, você encontrará uma mistura de temas técnicos com referências ao deserto, império otomano, 
-				e elementos da cultura geek. Aqui estão algumas ideias para começar sua jornada:
-			</p>
-			<p>
-				Aproveite a viagem! Se precisar de ajuda, lembre-se de comentar as postagens  
-				ou <a href="mailto:paxa@paxa.dev">me enviar um e-mail</a> para fazer perguntas.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Base title={title} description={description}>
+  <h1>🌵 Olá, Peregrino!</h1>
+  <p>
+    Bem-vindo ao oásis digital do Paxá! Aqui no blog, navegamos pelas vastas
+    dunas da tecnologia, explorando o império do desenvolvimento web,
+    programação e administração de sistemas com uma pitada de cultura geek.
+  </p>
+  <p>
+    Este espaço é uma extensão do meu trabalho como Desenvolvedor Web, onde
+    compartilho artigos, dicas, snippets de código e alguns bookmarks. Se você é
+    um nômade digital em busca de conhecimento, está no lugar certo!
+  </p>
+  <p>
+    No blog, você encontrará uma mistura de temas técnicos com referências ao
+    deserto, império otomano, e elementos da cultura geek. Aqui estão algumas
+    ideias para começar sua jornada:
+  </p>
+  <p>
+    Aproveite a viagem! Se precisar de ajuda, lembre-se de comentar as postagens
+    ou <a href="mailto:paxa@paxa.dev">me enviar um e-mail</a> para fazer perguntas.
+  </p>
+</Base>
