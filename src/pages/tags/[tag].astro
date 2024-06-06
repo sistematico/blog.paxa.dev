@@ -1,38 +1,38 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '@/layouts/base.astro';
-import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content'
+import Layout from '@/layouts/base.astro'
+import type { CollectionEntry } from 'astro:content'
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection('blog');
+  const allPosts = await getCollection('blog')
 
-  const tags: string[] = [];
+  const tags: string[] = []
 
-  allPosts.forEach((post) => {
-    post.data.tags.forEach((tag) => {
-      tags.push(tag.toLowerCase());
-    });
-  });
+  for (const post of allPosts) {
+    if (post.data.tags) {
+      for (const tag of post.data.tags ?? []) {
+        tags.push(tag.toLowerCase())
+      }
+    }
+  }
 
   return Array.from(new Set(tags)).map((tag) => {
     return {
       params: { tag },
       props: {
-        blogposts: allPosts.filter((post) =>
-          post.data.tags.map((tag) => tag.toLowerCase()).includes(tag),
-        ),
-      },
-    };
-  });
+        blogposts: allPosts.filter((post) => post.data.tags?.map((tag) => tag.toLowerCase()).includes(tag))
+      }
+    }
+  })
 }
 
 interface Props {
-  tag: string;
-  blogposts: CollectionEntry<"blog">[];
+  tag: string
+  blogposts: CollectionEntry<'blog'>[]
 }
 
-const { tag } = Astro.params;
-const { blogposts } = Astro.props;
+const { tag } = Astro.params
+const { blogposts } = Astro.props
 ---
 
 <Layout>
