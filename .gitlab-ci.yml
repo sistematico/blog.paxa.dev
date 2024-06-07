@@ -1,7 +1,6 @@
 image: oven/bun:alpine
 
 before_script:
-  - echo "GITHUB_TOKEN=$GITHUB_TOKEN" > .env
   - rm -rf node_modules public dist
   - bun install
 
