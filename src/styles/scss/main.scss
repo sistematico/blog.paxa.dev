@@ -30,6 +30,20 @@
   --purple: 214, 153, 182;
 }
 
+[data-theme="dark"] {
+  --fg: 154, 151, 243;
+  --bg: 129, 140, 171;
+}
+
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
+
 body {
   font-family: system-ui, "Segoe UI", sans-serif;
   margin: 0;

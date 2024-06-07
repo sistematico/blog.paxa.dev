@@ -1,7 +1,7 @@
 ---
 import Logo from '@/components/logo.astro';
 import Nav from '@/components/nav.astro';
-import Icon from '@/components/icon.astro';
+import Theme from '@/components/theme.astro';
 const title = import.meta.env.PUBLIC_APP_NAME;
 ---
 
@@ -13,27 +13,19 @@ const title = import.meta.env.PUBLIC_APP_NAME;
         <h2>{title}</h2>
       </a>
     </div>
+
     <div class="nav-links">
-      <Nav href="/">Início</Nav>
+      <Nav href="/">Blog</Nav>
       <Nav href="/snippets">Snippets</Nav>
       <Nav href="/projetos">Projetos</Nav>
     </div>
-    <div class="social-links">
-      <a href="https://twitter.com/sistematico" target="_blank">
-        <span class="sr-only">Twitter</span>
-        <Icon name="twitter" />
-      </a>
-      <a href="https://github.com/sistematico" target="_blank">
-        <span class="sr-only">GitHub</span>
-        <Icon name="github" />
-      </a>
-      <a href="https://gitlab.com/sistematico" target="_blank">
-        <span class="sr-only">Gitlab</span>
-        <Icon name="gitlab" size="34" />
-      </a>
+
+    <div>
+      <Theme />
     </div>
   </nav>
 </header>
+
 <style>
 .logo a {
   display: flex;
@@ -48,8 +40,6 @@ const title = import.meta.env.PUBLIC_APP_NAME;
 .logo a h2 {
   font-size: 1.5em;
   font-weight: 700;
-  margin: 0;
-  padding: 0;
 }
 
 header {
@@ -66,20 +56,81 @@ header {
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 0 1em;
+  /* justify-content: space-between; */
+  /* margin: 0 1em; */
 }
 
-.social-links,
-.social-links a {
+nav div {
+  flex: 1;
   display: flex;
+  justify-content: center;
 }
+
+/* nav:first-child > span { margin-right: auto; } */
+/* nav:last-child  > span { margin-left: auto;  } */
 
 @media (max-width: 720px) {
-  header { padding: 0 .2em; }
-  .logo a h2 { display: none; }
-  nav { margin: 0 .5em; }
-  nav a { padding: .4em 0.25em; }
-  .social-links { display: none; }
+  header { 
+    padding: 0 .2em; 
+  }
+  
+  .logo a h2 { 
+    display: none; 
+  }
+  
+  nav, nav div { 
+    flex-direction: column;
+    margin: 0 .5em; 
+  }
+ 
+  /* nav a { 
+    padding: .4em 0.25em; 
+  } */
 }
 </style>
+
+<script is:inline>
+function myFunction() {
+  const nav = document.getElementById("myTopnav");
+  const burger = document.querySelector(".burger");
+  
+  if (nav.className === "topnav") {
+    nav.className += " responsive";
+    burger.innerHTML = "X";
+  } else {
+    nav.className = "topnav";
+    burger.innerHTML = "Menu";
+  }
+}
+
+
+  // const theme = (() => {
+  //   if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+  //     return localStorage.getItem('theme');
+  //   }
+
+  //   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  //     return 'dark';
+  //   }
+
+  //   return 'light';
+  // })();
+
+  // if (theme === 'light') {
+  //   document.documentElement.setAttribute('data-theme', 'light');
+  // } else {
+  //   document.documentElement.setAttribute('data-theme', 'dark');
+  // }
+
+  // window.localStorage.setItem('theme', theme);
+
+  // const handleToggleClick = () => {
+  //   const current = document.documentElement.getAttribute('data-theme');
+  //   document.getElementById("themeToggle").classList.toggle("theme-toggle--toggled");
+  //   document.documentElement.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+  //   localStorage.setItem("theme", current === 'dark' ? 'light' : 'dark');
+  // }
+
+  // document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
+</script>
+

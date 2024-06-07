@@ -8,5 +8,10 @@
     "name": "FIPE",
     "desc": "Tabela FIPE",
     "href": "https://github.com/sistematico/fipe"
+  },
+  {
+    "name": "Morse",
+    "desc": "Web App de bate-papo usando o Vue.js e WebSockets",
+    "href": "https://github.com/sistematico/morse"
   }
 ]
