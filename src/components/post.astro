@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import Base from '@/layouts/base.astro'
+import Comments from '@/components/comments.astro';
 import FormattedDate from '@/components/date.astro'
 
 type Props = CollectionEntry<'blog'>['data']
@@ -36,6 +37,8 @@ const { title, description, created, updated, tags, heroImage } = Astro.props
       <hr />
     </div>
     <slot />
+    <hr />
+    <Comments />
   </div>
 </Base>
 
