@@ -15,7 +15,6 @@ const title = import.meta.env.PUBLIC_APP_NAME;
     </div>
     <div class="nav-links">
       <Nav href="/">Início</Nav>
-      <Nav href="/posts">Blog</Nav>
       <Nav href="/snippets">Snippets</Nav>
       <Nav href="/projetos">Projetos</Nav>
     </div>
@@ -40,15 +39,11 @@ const title = import.meta.env.PUBLIC_APP_NAME;
   display: flex;
   align-items: center;
   color: #fff;
-  text-decoration: none;
   gap: 3px;
   border: none;
 }
 
-.logo a:hover {
-  color: #fff;
-  text-decoration: none;
-}
+.logo a:hover { color: #fff; }
 
 .logo a h2 {
   font-size: 1.5em;
@@ -61,7 +56,6 @@ header {
   position: sticky;
   top: 0;
   font-family: "Nunito", system-ui, "Segoe UI", sans-serif;
-  text-decoration: none;
   background: rgba(var(--secondary-bg), .5);
   box-shadow: 0 2px 8px rgba(var(--black), 5%);
   border-bottom: 2px solid rgba(var(--secondary-bg), .9);

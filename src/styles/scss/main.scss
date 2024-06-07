@@ -74,18 +74,20 @@ h3 { font-size: 1.953em; }
 h4 { font-size: 1.563em; }
 h5 { font-size: 1.25em; }
 strong, b {	font-weight: 700; }
-a { transition: all 350ms ease; }
+
+a {
+  text-decoration: none; 
+  transition: all 350ms ease; 
+}
+
 a, a:hover { color: rgb(var(--accent)); }
-a:active { text-decoration: none; }
 
 .nav-links a {
   font-family: "Roboto Slab", system-ui, "Segoe UI", sans-serif;
   display: inline-block;
-  text-decoration: none;
   color: rgb(var(--fg));
   padding: 0 .3em;
   border-bottom: 4px solid transparent;
-  text-decoration: none;
   line-height: 3em;
 }
 
@@ -117,8 +119,6 @@ a:active { text-decoration: none; }
   color: rgb(var(--purple));
   border-bottom-color: rgb(var(--purple));
 }
-
-a:hover {	color: rgb(var(--accent-hover)); }
 
 p {	margin-bottom: 1em; }
 .prose p { margin-bottom: 2em; }
@@ -181,7 +181,6 @@ hr {
 }
 
 .badge {
-  text-decoration: none;
   background-color: rgb(var(--secondary-bg));
   color: white;
   padding: 4px 8px;
@@ -208,7 +207,6 @@ footer .social-links {
 }
 
 .social-links a {
-  text-decoration: none;
   color: rgb(var(--secondary-fg));
 }
 

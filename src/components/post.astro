@@ -28,7 +28,7 @@ const { title, description, created, updated, tags, heroImage } = Astro.props
           {
             tags.map((tag) => (
               <a href={`/tags/${tag}`}>
-                <span class="badge">#{tag}</span>
+                <span class="badge">##{tag}</span>
               </a>
             ))
           }
@@ -41,17 +41,3 @@ const { title, description, created, updated, tags, heroImage } = Astro.props
     <Comments />
   </div>
 </Base>
-
-<style>
-  a {
-    color: var(--fg);
-    text-decoration: none;
-  }
-
-  .tags {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-</style>
