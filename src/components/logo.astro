@@ -92,12 +92,12 @@ const { color = '#ffffff', hover = '#ffffff', size = '2.5em' } = Astro.props;
   }
 
   svg .path {
-    fill: var(--color);
+    fill: rgb(var(--fg));
     transition: fill 0.3s ease-in-out;
   }
   
   svg:hover .path {
-    fill: var(--hover);
+    fill: rgb(var(--fg));
   }
 
   @media (max-width: 768px) {

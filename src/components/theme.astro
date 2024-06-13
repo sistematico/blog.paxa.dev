@@ -2,7 +2,7 @@
 ---
 
 <button id="themeToggle" class="theme-toggle" type="button" title="Toggle theme" aria-label="Toggle theme">
-	<span class="theme-toggle-sr">Toggle theme</span>
+  <span class="theme-toggle-sr">Toggle theme</span>
   <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32" fill="currentColor" class="theme-toggle__expand" viewBox="0 0 32 32">
     <clipPath id="theme-toggle__expand__cutout">
       <path d="M0-11h25a1 1 0 0017 13v30H0Z" />
@@ -19,11 +19,13 @@
 @import url(https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/expand.min.css);
 
 :root {
-	--color-front: #000;
-	
-	@media (prefers-color-scheme: dark) {
-		--color-front: #FFF;
-	}
+  --color-front: #FFF;
+  --light: #FFF;
+  --dark: #000;
+  
+  @media (prefers-color-scheme: dark) {
+    --color-front: #000;
+  }
 }
 
 button {
@@ -33,10 +35,16 @@ button {
   margin: 0;
 }
 
+.theme-toggle {
+  & svg {
+    color: var(--light);
+  }
+}
+
 .theme-toggle--toggled {
-	& svg {
-		color: var(--color-front);
-	}
+  & svg {
+    color: var(--dark);
+  }
 }
 </style>
 
