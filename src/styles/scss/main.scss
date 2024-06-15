@@ -99,7 +99,7 @@ a {
   transition: all 350ms ease; 
 }
 
-a:hover:not(.nav-link) { 
+article a:hover { 
   text-decoration: underline;
 }
 
