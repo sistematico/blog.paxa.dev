@@ -1,4 +1,4 @@
 {
-    "npm.packageManager": "bun",
-    "editor.tabSize": 2
+  "npm.packageManager": "bun",
+  "editor.tabSize": 2
 }
