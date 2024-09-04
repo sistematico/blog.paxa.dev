@@ -16,13 +16,13 @@
  * beian {string} Chinese policy
  */
 export const site = {
-  title: 'Astro Theme Yi', // required
+  title: 'Paxá Blog', // required
   favicon: '/favicon.svg', // required
-  description: 'Welcome to my independent blog website! ',
-  author: "Astro-Yi", // required
+  description: 'Meu blog pessoal ',
+  author: 'Paxá', // required
   avatar: '/avatar.png', // required
-  motto: 'Actions speak louder than words.',
-  url: '',
+  motto: 'Ações falam mais alto que palavras.',
+  url: 'https://blog.paxa.dev', // required
   recentBlogSize: 5,
   archivePageSize: 25,
   postPageSize: 10,
