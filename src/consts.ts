@@ -69,7 +69,7 @@ export const categories = [
   {
     name: "Arquivo",
     iconClass: "ri-archive-line",
-    href: "/archive/1",
+    href: "/arquivo/1",
   },
   // {
   //   name: "Message",
