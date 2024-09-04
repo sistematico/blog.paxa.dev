@@ -108,27 +108,27 @@ export const infoLinks = [
   {
     icon: 'ri-telegram-fill',
     name: 'telegram',
-    outlink: 'xxxxxxx',
+    outlink: 'https://t.me/sistematico',
   },
   {
     icon: 'ri-twitter-fill',
     name: 'twitter',
-    outlink: 'xxxxxxx',
+    outlink: 'https://x.com/sistematico',
   },
-  {
-    icon: 'ri-instagram-fill',
-    name: 'instagram',
-    outlink: 'xxxxxxx',
-  },
+  // {
+  //   icon: 'ri-instagram-fill',
+  //   name: 'instagram',
+  //   outlink: 'xxxxxxx',
+  // },
   {
     icon: 'ri-github-fill',
     name: 'github',
-    outlink: 'xxxxxxx',
+    outlink: 'https://github.com/sistematico',
   },
   {
     icon: 'ri-rss-fill',
     name: 'rss',
-    outlink: 'xxxxxxx',
+    outlink: 'https://blog.paxa.dev/feed/1',
   }
 ]
 
@@ -196,17 +196,30 @@ export const comment = {
 
   // giscus config
   giscusConfig: {
-    'data-repo': "",
-    'data-repo-id': "",
-    'data-category': "",
-    'data-category-id': "",
-    'data-mapping': "",
-    'data-strict': "",
-    'data-reactions-enabled': "",
-    'data-emit-metadata': "",
-    'data-input-position': "",
-    'data-theme': "",
-    'data-lang': "",
-    'crossorigin': "",
+    'data-repo': "sistematico/blog.paxa.dev",
+    'data-repo-id': "R_kgDOMstncg",
+    'data-category': "General",
+    'data-category-id': "DIC_kwDOMstncs4CiMio",
+    'data-mapping': "pathname",
+    'data-strict': "0",
+    'data-reactions-enabled': "1",
+    'data-emit-metadata': "0",
+    'data-input-position': "bottom",
+    'data-theme': "preferred_color_scheme",
+    'data-lang': "pt",
+    'crossorigin': "anonymous",
   }
 }
+
+// data-repo="sistematico/blog.paxa.dev"
+// data-repo-id="R_kgDOMstncg"
+// data-category-id="DIC_kwDOMstncs4CiMio"
+// data-mapping="pathname"
+// data-strict="0"
+// data-reactions-enabled="1"
+// data-emit-metadata="0"
+// data-input-position="bottom"
+// data-theme="preferred_color_scheme"
+// data-lang="pt"
+// crossorigin="anonymous"
+// async>
