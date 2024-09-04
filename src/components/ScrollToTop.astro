@@ -9,8 +9,8 @@
 <script>
   let scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-  window.onscroll = function () {
-    if (!scrollToTopBtn) return
+  window.onscroll = () => {
+    if (!scrollToTopBtn) return;
 
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
       scrollToTopBtn.classList.add('block')
@@ -21,11 +21,11 @@
     }
   };
 
-  if (!scrollToTopBtn) return
-  
-  scrollToTopBtn.addEventListener("click", () => {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  })
+  if (scrollToTopBtn) {
+    scrollToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    })
+  }
 </script>
 
