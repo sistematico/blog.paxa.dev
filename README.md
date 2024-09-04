@@ -1,8 +1,6 @@
-# Astro Theme Yi
+# Paxá Blog
 
-[[English]](./README.md) | [[简体中文]](./README-ZH-CN.md)
-
-Demo：[Astro-Theme-Yi](https://astro-yi-nu.vercel.app/)
+Demo：[Paxá Blog](https://blog.paxa.dev)
 
 A content-focused Astro blog theme, Yi, in Chinese, it means fast and concise.
 
@@ -19,7 +17,6 @@ A content-focused Astro blog theme, Yi, in Chinese, it means fast and concise.
 - [x] SEO-friendly
 - [x] Supports sitemap and RSS.
 - [x] Supports article drafts.
-- [x] Supports Waline Comment.
 - [x] Image lazy loading and scaling support.
 - [x] Supports fixed permalinks for articles.
 
@@ -72,7 +69,7 @@ export const site = {
     favicon: '/favicon.svg',
     description: 'Welcome to my independent blog website! ',
     author: "xxxxx",
-    avatar: '/avatar.png',
+    avatar: '/images/avatar.png',
     motto: 'Keep moving.',
     url: 'https://astro-yi-nu.vercel.app',
     recentBlogSize: 5,
@@ -190,7 +187,7 @@ export const infoLinks = [
  * tip {string}
  */
 export const donate = {
-  enable: false,
+  enable: true,
   tip: "Thanks for the coffee !!!☕",
   wechatQRCode: "/WeChatQR.png",
   alipayQRCode: "/AliPayQR.png",
@@ -218,30 +215,10 @@ export const friendshipLinks =
  * Comment Feature
  * enable {boolean}
  * type {string} giscus and waline are currently supported.
- * walineConfig.serverUrl {string} server link
- * walineConfig.pageSize {number} number of comments per page. default 10
- * walineConfig.wordLimit {number} Comment word s limit. When a single number is filled in, it 's the maximum number of comment words. No limit when set to 0
- * walineConfig.count {number} recent comment numbers
- * walineConfig.pageview {boolean} display the number of page views and comments of the article
- * walineConfig.reaction {string | string[]} Add emoji interaction function to the article
- * walineConfig.requiredMeta {string[]}  Set required fields, default anonymous
  */
 export const comment = {
   enable: false,
   type: 'giscus', // waline | giscus,
-  walineConfig:{
-    serverUrl: "https://xxxxx.xxxxx.app",
-    lang: 'en',
-    pageSize: 20,
-    wordLimit: '',
-    count: 5,
-    pageview: true,
-    reaction: true,
-    requiredMeta: ["nick", "mail"],
-    whiteList: ['/message/', '/friends/'],
-  },
-
-  // giscus config
   giscusConfig: {
     'data-repo': "xxxxxxx",
     'data-repo-id': "xxxxxx",

@@ -1,24 +1,25 @@
 ---
-import {getCollection} from 'astro:content';
+import { getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro'
-import PostTitle from "../../components/PostTitle.astro";
-import BlogFooter from '../../components/BlogFooter.astro'
-import {getCollectionByName} from "../../utils/getCollectionByName";
-import {sortPostsByDate} from "../../utils/sortPostsByDate";
+import PostTitle from '../../components/PostTitle.astro';
+import BlogFooter from '../../components/BlogFooter.astro';
+import {getCollectionByName} from '../../utils/getCollectionByName';
+import {sortPostsByDate} from '../../utils/sortPostsByDate';
 import Donate from '../../components/Donate.astro'
-import {donate} from "../../consts";
+import {donate} from '../../consts';
 
 export async function getStaticPaths() {
   const blogEntries = (await getCollection('blog')).filter(({data}) => {
     return import.meta.env.PROD ? !data.draft : true
   });
+
   return blogEntries.map(entry => ({
-    params: {slug: entry.slug}, props: {entry,},
+    params: { slug: entry.slug }, props: { entry },
   }));
 }
 
-const {entry} = Astro.props;
-const {Content, remarkPluginFrontmatter} = await entry.render();
+const { entry } = Astro.props;
+const { Content, remarkPluginFrontmatter } = await entry.render();
 
 const lastModified = remarkPluginFrontmatter.lastModified
 const readingTime = remarkPluginFrontmatter.readingTime

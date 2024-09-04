@@ -2,9 +2,7 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "module": "ES2022",
-    "lib": [
-      "es2020"
-    ],
+    "lib": ["es2020"],
     "target": "es2020",
     "isolatedModules": false,
     "resolveJsonModule": true,
@@ -20,9 +18,7 @@
       "@/*": ["src/*"],
       "$": ["./src"]
     },
-    "types": [
-      "astro/env"
-    ],
+    "types": ["astro/env"],
     "jsx": "preserve",
     "jsxImportSource": "solid-js"
   },
@@ -33,6 +29,5 @@
   ],
   "exclude": [
     "src/**/.astro"
-
   ]
 }

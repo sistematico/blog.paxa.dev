@@ -33,7 +33,10 @@ import {t} from '../i18n/utils'
         });
         comments += "</ul>";
         let commentDiv = document.getElementById("waline-comment");
-        commentDiv.innerHTML = comments;
+        
+        if (commentDiv) {
+          commentDiv.innerHTML = comments;
+        }
     })
   }
 </script>

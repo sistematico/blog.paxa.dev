@@ -2,8 +2,8 @@
 const {href, icon: iconClass, children, target, ...props} = Astro.props;
 
 const {pathname} = Astro.url;
-let hrefMath = href.split('/')
-let pathnameMatch = pathname.split('/')
+const hrefMath = href.split('/')
+const pathnameMatch = pathname.split('/')
 const isActive = hrefMath[1] === pathnameMatch[1]
 ---
 <div class="box relative h-10 w-auto flex items-center">

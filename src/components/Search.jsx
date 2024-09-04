@@ -13,13 +13,14 @@ export function Search(props) {
     if (e.target.value === '') {
       setResultPosts([])
     } else {
-      let filterBlogs = props.posts.filter(post =>
+      const filterBlogs = props.posts.filter(post =>
         _.toString(post.data.title).toLowerCase().includes(inputVal().toLowerCase())
         || _.toString(post.data.description).toLowerCase().includes(inputVal().toLowerCase())
       )
-      let cloneBlogs = _.cloneDeep(filterBlogs)
+      const cloneBlogs = _.cloneDeep(filterBlogs)
       const reg = new RegExp(e.target.value, 'gi')
-      cloneBlogs.forEach(blog => {
+      
+      for (const blog of cloneBlogs) {
         blog.data.title = blog.data.title.replace(reg, (match) => {
           return `<span class="text-skin-active font-bold">${match}</span>`
         })
@@ -30,7 +31,7 @@ export function Search(props) {
         } else {
           blog.data.description = ''
         }
-      })
+      }
       setResultPosts(cloneBlogs)
     }
   }
@@ -39,7 +40,7 @@ export function Search(props) {
     <div>
       <label class="relative block">
         <span class="absolute inset-y-0 flex items-center pl-2 opacity-75">
-          <i class="ri-search-line text-skin-active ml-1"></i>
+          <i class="ri-search-line text-skin-active ml-1" />
         </span>
         <input
           id="search-input"
@@ -60,7 +61,7 @@ export function Search(props) {
           <>
             <a
               class="text-xl underline-offset-4 decoration-skin-base decoration-wavy hover:underline hover:decoration-sky-500 font-bold"
-              href={`/posts/${post.slug}`} innerHTML={post.data.title}>
+              href={'/posts/' + post.slug} innerHTML={post.data.title}>
             </a>
             <div class="flex items-center">
               {post.data.date ?

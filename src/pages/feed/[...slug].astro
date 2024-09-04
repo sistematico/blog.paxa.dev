@@ -1,8 +1,7 @@
 ---
-import {sortPostsByDate} from "src/utils/sortPostsByDate";
+import {sortPostsByDate} from "../../utils/sortPostsByDate";
 import {getCollectionByName} from "../../utils/getCollectionByName";
 import BlogPost from '../../layouts/BlogPost.astro'
-import {comment} from "../../consts";
 import {formatDate} from '../../utils/formatDate'
 import {t} from '../../i18n/utils'
 
@@ -15,18 +14,22 @@ export async function getStaticPaths() {
 }
 
 const post = Astro.props;
-const {Content} = await post.render();
+const { Content } = await post.render();
 const posts = await getCollectionByName("feed");
 const sortPosts = sortPostsByDate(posts);
 
 let postDate = post.data.date ? formatDate(post.data.date) : '';
+
 const currentPostIndex = sortPosts.findIndex(
   (postItem) => postItem.data.date === post.data.date
 );
+
 let prevPost: any, nextPost: any;
+
 if (sortPosts[currentPostIndex - 1]) {
   prevPost = sortPosts[currentPostIndex - 1];
 }
+
 if (sortPosts[currentPostIndex + 1]) {
   nextPost = sortPosts[currentPostIndex + 1];
 }
@@ -41,18 +44,6 @@ if (sortPosts[currentPostIndex + 1]) {
             <i class="ri-calendar-2-fill mr-1"/>
             <div class="tag">{postDate}</div>
           </div>}
-        {comment.enable && comment.type === "waline" && comment.pageview && (
-          <div class="divider-vertical"/>
-          <a href="#" title="当前页面阅读量" class="flex items-center">
-            <i class="ri-fire-fill mr-1"/>
-            <span class="waline-pageview-count" data-path={'/posts/' + post.slug}/>
-          </a>
-          <div class="divider-vertical"/>
-          <a href="#waline" title="当前页面评论数" class="flex items-center">
-            <i class="ri-discuss-fill mr-1"/>
-            <span class="waline-comment-count" data-path={'/posts/' + post.slug}/>
-          </a>
-        )}
       </div>
     )
   }

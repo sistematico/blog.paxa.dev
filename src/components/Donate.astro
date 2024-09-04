@@ -36,18 +36,18 @@ import {donate} from "../consts";
   if (qrDiv) {
     if (aliDiv && donate.alipayQRCode) {
       aliDiv.addEventListener("mouseenter", () => {
-        qrDiv[0].style.display = "block";
+        (qrDiv[0] as HTMLElement).style.display = "block";
       });
       aliDiv.addEventListener("mouseleave", () => {
-        qrDiv[0].style.display = "none";
+        (qrDiv[0] as HTMLElement).style.display = "none";
       });
     }
     if (wechatDiv && donate.wechatQRCode) {
       wechatDiv.addEventListener("mouseenter", () => {
-        qrDiv[1].style.display = "block";
+        (qrDiv[1] as HTMLElement).style.display = "block";
       });
       wechatDiv.addEventListener("mouseleave", () => {
-        qrDiv[1].style.display = "none";
+        (qrDiv[1] as HTMLElement).style.display = "none";
       });
     }
   }

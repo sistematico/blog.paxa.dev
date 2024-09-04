@@ -24,7 +24,9 @@ const { date, index } = Astro.props;
 
       let timeSpan = document.getElementsByClassName("postTimeEle");
       let postDateFromNow = date ? dayjs(date).fromNow() : dayjs().format("YYYY-MM-DD");
-      timeSpan[index].innerHTML = `${t('feed.publishedIn')}：${postDateFromNow}`;
+      if (index !== undefined && timeSpan[index]) {
+        timeSpan[index].innerHTML = `${t('feed.publishedIn')}：${postDateFromNow}`;
+      }
     }
   }
   customElements.define("feed-post-date", FeedPostDate);

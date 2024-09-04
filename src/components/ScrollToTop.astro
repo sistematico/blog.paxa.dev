@@ -9,9 +9,9 @@
 <script>
   let scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-  // 监听窗口滚动事件
   window.onscroll = function () {
-    // 显示/隐藏按钮根据滚动位置
+    if (!scrollToTopBtn) return
+
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
       scrollToTopBtn.classList.add('block')
       scrollToTopBtn.classList.remove('hidden')
@@ -20,7 +20,9 @@
       scrollToTopBtn.classList.remove('block')
     }
   };
-  // 获取按钮的引用
+
+  if (!scrollToTopBtn) return
+  
   scrollToTopBtn.addEventListener("click", () => {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera

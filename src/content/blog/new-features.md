@@ -4,6 +4,7 @@ title: New features
 description: More new features specific to this theme.
 mermaid: true
 mathjax: true
+draft: true
 ---
 
 ### Support collapse

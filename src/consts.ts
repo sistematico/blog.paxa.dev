@@ -56,49 +56,34 @@ export const categories = [
     iconClass: "ri-draft-line",
     href: "/",
   },
-  // {
-  //   name: "Blog",
-  //   iconClass: "ri-draft-line",
-  //   href: "/posts/1",
-  // },
-  // {
-  //   name: "Feed",
-  //   iconClass: "ri-lightbulb-flash-line",
-  //   href: "/feed/1",
-  // },
   {
     name: "Arquivo",
     iconClass: "ri-archive-line",
     href: "/arquivo/1",
   },
-  // {
-  //   name: "Message",
-  //   iconClass: "ri-chat-1-line",
-  //   href: "/message",
-  // },
   {
     name: "Pesquisar",
     iconClass: "ri-search-line",
     href: "/search",
   },
-  {
-    name: "Mais",
-    iconClass: "ri-more-fill",
-    href: "javascript:void(0);",
-    children: [
-      {
-        name: 'About',
-        iconClass: 'ri-information-line',
-        href: '/about',
-      },
-      {
-        name: 'Friends',
-        iconClass: 'ri-user-5-line',
-        href: '/friends',
-        target: '_self',
-      },
-    ]
-  }
+  // {
+  //   name: "Mais",
+  //   iconClass: "ri-more-fill",
+  //   href: "javascript:void(0);",
+  //   children: [
+  //     {
+  //       name: 'About',
+  //       iconClass: 'ri-information-line',
+  //       href: '/about',
+  //     },
+  //     {
+  //       name: 'Friends',
+  //       iconClass: 'ri-user-5-line',
+  //       href: '/friends',
+  //       target: '_self',
+  //     },
+  //   ]
+  // }
 ]
 
 /**
@@ -111,15 +96,10 @@ export const infoLinks = [
     outlink: 'https://t.me/sistematico',
   },
   {
-    icon: 'ri-twitter-fill',
-    name: 'twitter',
+    icon: 'ri-twitter-x-fill',
+    name: 'x',
     outlink: 'https://x.com/sistematico',
   },
-  // {
-  //   icon: 'ri-instagram-fill',
-  //   name: 'instagram',
-  //   outlink: 'xxxxxxx',
-  // },
   {
     icon: 'ri-github-fill',
     name: 'github',
@@ -141,8 +121,8 @@ export const infoLinks = [
  * paypalUrl {string}
  */
 export const donate = {
-  enable: false,
-  tip: "Thanks for the coffee !!!☕",
+  enable: true,
+  tip: "Obrigado! ☕",
   wechatQRCode: "/WeChatQR.png",
   alipayQRCode: "/AliPayQR.png",
   paypalUrl: "https://paypal.me/xxxxxxxxxx",
@@ -168,33 +148,11 @@ export const friendshipLinks =
 /**
  * Comment Feature
  * enable {boolean}
- * type {string} required waline | giscus
- * walineConfig.serverUrl {string} server link
- * walineConfig.lang {string} link: https://waline.js.org/guide/features/i18n.html
- * walineConfig.pageSize {number} number of comments per page. default 10
- * walineConfig.wordLimit {number} Comment word s limit. When a single number is filled in, it 's the maximum number of comment words. No limit when set to 0
- * walineConfig.count {number} recent comment numbers
- * walineConfig.pageview {boolean} display the number of page views and comments of the article
- * walineConfig.reaction {string | string[]} Add emoji interaction function to the article
- * walineConfig.requiredMeta {string[]}  Set required fields, default anonymous
- * walineConfig.whiteList {string[]} set some pages not to display reaction
+ * type {string} required giscus
  */
 export const comment = {
   enable: true,
   type: 'giscus', // waline | giscus,
-  walineConfig:{
-    serverUrl: "",
-    lang: 'en',
-    pageSize: 20,
-    wordLimit: '',
-    count: 5,
-    pageview: true,
-    reaction: true,
-    requiredMeta: ["nick", "mail"],
-    whiteList: ['/message/', '/friends/', '/posts/'],
-  },
-
-  // giscus config
   giscusConfig: {
     'data-repo': "sistematico/blog.paxa.dev",
     'data-repo-id': "R_kgDOMstncg",
@@ -210,16 +168,3 @@ export const comment = {
     'crossorigin': "anonymous",
   }
 }
-
-// data-repo="sistematico/blog.paxa.dev"
-// data-repo-id="R_kgDOMstncg"
-// data-category-id="DIC_kwDOMstncs4CiMio"
-// data-mapping="pathname"
-// data-strict="0"
-// data-reactions-enabled="1"
-// data-emit-metadata="0"
-// data-input-position="bottom"
-// data-theme="preferred_color_scheme"
-// data-lang="pt"
-// crossorigin="anonymous"
-// async>
