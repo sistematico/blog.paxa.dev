@@ -17,10 +17,10 @@
  */
 export const site = {
   title: 'Paxá Blog', // required
-  favicon: '/favicon.svg', // required
+  favicon: '/images/favicon.svg', // required
   description: 'Meu blog pessoal ',
   author: 'Paxá', // required
-  avatar: '/avatar.png', // required
+  avatar: '/images/logo.png', // required
   motto: 'Ações falam mais alto que palavras.',
   url: 'https://blog.paxa.dev', // required
   recentBlogSize: 5,
@@ -38,7 +38,7 @@ export const site = {
  */
 export const config = {
   busuanzi: false,
-  lang: 'en', // en | zh-cn | cs
+  lang: 'pt-br', // en | pt-br | zh-cn | cs
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
   ga: false // If you want to integrate with Google Analytics, just enter your GA-ID here.
 }
@@ -52,32 +52,37 @@ export const config = {
  */
 export const categories = [
   {
-    name: "Blog",
+    name: "Início",
     iconClass: "ri-draft-line",
-    href: "/blog/1",
+    href: "/",
   },
+  // {
+  //   name: "Blog",
+  //   iconClass: "ri-draft-line",
+  //   href: "/posts/1",
+  // },
+  // {
+  //   name: "Feed",
+  //   iconClass: "ri-lightbulb-flash-line",
+  //   href: "/feed/1",
+  // },
   {
-    name: "Feed",
-    iconClass: "ri-lightbulb-flash-line",
-    href: "/feed/1",
-  },
-  {
-    name: "Archive",
+    name: "Arquivo",
     iconClass: "ri-archive-line",
     href: "/archive/1",
   },
+  // {
+  //   name: "Message",
+  //   iconClass: "ri-chat-1-line",
+  //   href: "/message",
+  // },
   {
-    name: "Message",
-    iconClass: "ri-chat-1-line",
-    href: "/message",
-  },
-  {
-    name: "Search",
+    name: "Pesquisar",
     iconClass: "ri-search-line",
     href: "/search",
   },
   {
-    name: "More",
+    name: "Mais",
     iconClass: "ri-more-fill",
     href: "javascript:void(0);",
     children: [

@@ -1,6 +1,7 @@
-import dayjs from "dayjs";
+import dayjs from 'dayjs';
+import 'dayjs/locale/pt-br';
 import advancedFormat from 'dayjs/plugin/advancedFormat'
-import utc from "dayjs/plugin/utc";
+import utc from 'dayjs/plugin/utc';
 import {t} from '../i18n/utils';
 import {config} from '../consts';
 
@@ -10,9 +11,9 @@ dayjs.extend(utc);
 
 export function formatDate(date,dateType='post.dateFormat') {
   if (date) {
-    const dateFormat = t(dateType) || "YYYY-MM-DD";
+    const dateFormat = t(dateType) || 'YYYY-MM-DD';
     return dayjs(date).utc().format(dateFormat);
-  } else {
-    return ''
   }
+  
+  return ''
 }

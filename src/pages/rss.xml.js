@@ -13,10 +13,10 @@ export async function GET(context) {
     items: blog.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
-      description: post.data.description? post.data.description : post.body.substring(0, 140).replace(/#/gi, "") + "...",
+      description: post.data.description? post.data.description : `${post.body.substring(0, 140).replace(/#/gi, "")}...`,
       // Compute RSS link from post `slug`
-      // This example assumes all posts are rendered as `/blog/[slug]` routes
-      link: `/blog/${post.slug}/`,
+      // This example assumes all posts are rendered as `/posts/[slug]` routes
+      link: `/posts/${post.slug}/`,
     })),
   });
 }

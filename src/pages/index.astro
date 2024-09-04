@@ -5,11 +5,12 @@ import {getCollectionByName} from "../utils/getCollectionByName";
 import {orderBySticky} from "../utils/orderBySticky";
 import {site} from '../consts'
 import Pagination from "../components/Pagination.astro";
-import _ from 'lodash'
+import ceil from 'lodash/ceil';
+import divide from 'lodash/divide';
 
-let currentPage = 1
-let blogs = await getCollectionByName("blog");
-let totalPage = _.ceil(_.divide(blogs.length, site.postPageSize))
+const currentPage = 1
+const blogs = await getCollectionByName("blog");
+const totalPage = ceil(divide(blogs.length, site.postPageSize))
 
 let sortedPosts = await orderBySticky(blogs);
 if (sortedPosts.length > site.postPageSize) {
@@ -27,7 +28,7 @@ if (sortedPosts.length > site.postPageSize) {
       <Pagination
         currentPage={currentPage}
         totalPage={totalPage}
-        url={{prev: '', next: '/blog/2'}}
+        url={{prev: '', next: '/posts/2'}}
       /> : ''
   }
 </IndexPage>

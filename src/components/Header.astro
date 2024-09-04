@@ -10,9 +10,9 @@ import AsideIcon from "./SidebarIcon.astro";
 import {t} from "../i18n/utils";
 import getCountByTagName from "../utils/getCountByTagName";
 const blogs = await getCollectionByName('blog')
-let tagArr = getUniqueTags(blogs);
-let categoryCount = getCountByCategory(blogs);
-let tagCount = getCountByTagName(blogs);
+const tagArr = getUniqueTags(blogs);
+const categoryCount = getCountByCategory(blogs);
+const tagCount = getCountByTagName(blogs);
 ---
 
 <header class="fixed top-0 w-full bg-skin-fill text-skin-base z-10">

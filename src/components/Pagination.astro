@@ -1,11 +1,12 @@
 ---
-import {t} from '../i18n/utils'
-let pager = []; // 实际显示的分页组件内容
-//prefixUrl : 点击页面跳转的路由地址前缀，比如/blog/1,/tags/1, /category/1等等
+import {t} from '../i18n/utils';
+let pager: number[] = []; 
+//prefixUrl : 比如/posts/1,/tags/1, /category/1等等
+
 const {
   currentPage,
   totalPage,
-  prefixUrl = "/blog/",
+  prefixUrl = "/posts/",
   url = { prev: "", next: "" },
 } = Astro.props;
 
@@ -17,9 +18,9 @@ if (totalPage === 1) {
   if (currentPage > totalPage) {
     return
   }
-  let diffNextPages = 2 - (totalPage - currentPage);
+  const diffNextPages = 2 - (totalPage - currentPage);
 
-  let diffPrevPages = currentPage - 1;
+  const diffPrevPages = currentPage - 1;
 
   if (diffNextPages <= 2 && diffNextPages >= 0) {
     pager = [

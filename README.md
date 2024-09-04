@@ -105,7 +105,7 @@ export const categories = [
   {
     name: "Blog",
     iconClass: "ri-draft-line",
-    href: "/blog/1",
+    href: "/posts/1",
   },
   {
     name: "Feed",

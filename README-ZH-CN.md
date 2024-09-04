@@ -105,7 +105,7 @@ export const categories = [
   {
     name: "博客",
     iconClass: "ri-draft-line",
-    href: "/blog/1",
+    href: "/posts/1",
   },
   {
     name: "动态",
