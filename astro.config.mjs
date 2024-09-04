@@ -16,8 +16,8 @@ import {visit} from 'unist-util-visit'
 import {pluginCollapsibleSections} from '@expressive-code/plugin-collapsible-sections'
 
 function customRehypeLazyLoadImage() {
-  return function (tree) {
-    visit(tree, function (node) {
+  return (tree) => {
+    visit(tree, (node) => {
       if (node.tagName === 'img') {
         node.properties['data-src'] = node.properties.src
         node.properties.src = '/spinner.gif'
@@ -29,7 +29,7 @@ function customRehypeLazyLoadImage() {
 }
 
 export default defineConfig({
-  site: 'https://astro-yi-nu.vercel.app',
+  site: 'https://blog.paxa.dev',
   integrations: [sitemap(), tailwind(), solid(), expressiveCode({
     plugins: [pluginLineNumbers(), pluginCollapsibleSections()],
     themes: ["github-dark", "github-light"],
