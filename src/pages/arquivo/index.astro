@@ -1,14 +1,14 @@
 ---
-import dayjs from "dayjs";
-import {site} from "../../consts";
-import IndexPage from "../../layouts/IndexPage.astro";
-import getPostsByYear from "../../utils/getPostsByYear";
-import {sortPostsByDate} from "../../utils/sortPostsByDate";
-import Pagination from "../../components/Pagination.astro";
-import {getCollectionByName} from "../../utils/getCollectionByName";
-import _ from "lodash";
+import dayjs from 'dayjs';
+import Base from '@/layouts/base.astro';
+import getPostsByYear from '@/utils/getPostsByYear';
+import {sortPostsByDate} from '@/utils/sortPostsByDate';
+import Pagination from '@/components/Pagination.astro';
+import {getCollectionByName} from '@/utils/getCollectionByName';
+import _ from 'lodash';
+import { site } from '@/consts';
 
-const posts = await getCollectionByName("blog");
+const posts = await getCollectionByName('blog');
 const totalPage = _.ceil(_.divide(posts.length, site.archivePageSize));
 
 let sortedPosts = sortPostsByDate(posts);
@@ -17,7 +17,7 @@ sortedPosts = sortedPosts.splice(0, site.archivePageSize);
 const resultPosts = getPostsByYear(sortedPosts);
 ---
 
-<IndexPage>
+<Base>
   {
     Object.keys(resultPosts)
       .sort((a, b) => Number(b) - Number(a))
@@ -40,4 +40,4 @@ const resultPosts = getPostsByYear(sortedPosts);
       ))
   }
   <Pagination currentPage={1} totalPage={totalPage} prefixUrl="/arquivo/"/>
-</IndexPage>
+</Base>

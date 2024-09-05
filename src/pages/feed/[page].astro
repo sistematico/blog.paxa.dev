@@ -1,6 +1,6 @@
 ---
 import {site} from "../../consts";
-import IndexPage from '../../layouts/IndexPage.astro'
+import Base from '../../layouts/base.astro'
 import Pagination from "../../components/Pagination.astro";
 import { sortPostsByDate } from "../../utils/sortPostsByDate";
 import { getCollectionByName } from "../../utils/getCollectionByName";
@@ -15,7 +15,7 @@ export async function getStaticPaths({ paginate }) {
 const { page }: { page: { data: any[] } } = Astro.props;
 ---
 
-<IndexPage>
+<Base>
   {page.data.map((post, index) => <FeedPreview post={post} index={index} />)}
   <Pagination
     currentPage={page.currentPage}
@@ -23,4 +23,4 @@ const { page }: { page: { data: any[] } } = Astro.props;
     url={page.slug}
     prefixUrl="/feed/"
   />
-</IndexPage>
+</Base>
