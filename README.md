@@ -1,12 +1,10 @@
 # Paxá Blog
 
-Demo：[Paxá Blog](https://blog.paxa.dev)
+### Demo
+
+- [Blog](https://blog.paxa.dev)
 
 A content-focused Astro blog theme, Yi, in Chinese, it means fast and concise.
-
-![](https://pic-19d9.obs.cn-east-3.myhuaweicloud.com/astroyi/home.png)
-
-![](https://pic-19d9.obs.cn-east-3.myhuaweicloud.com/astroyi/post-white.png)
 
 ### 🔥 Features
 
@@ -20,15 +18,7 @@ A content-focused Astro blog theme, Yi, in Chinese, it means fast and concise.
 - [x] Image lazy loading and scaling support.
 - [x] Supports fixed permalinks for articles.
 
-......
-
-### Vercel Deplyment
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https%3A%2F%2Fgithub.com%2Fcirry%2Fastro-yi)
-
-Give it a try! Click the button above, and you can deploy with just one click.
-
-### 👨🏻‍💻 Manual Installation
+### 👨🏻‍💻 Instalação manual
 
 Recommended for use `nodejs >= 18`，`pnpm >= 8`。
 
@@ -45,45 +35,26 @@ npm run build # build your production site to ./dist
 ```
 After the packaging is completed, Upload the `dist` folder to the web server directory.
 
-## Configuration
+## Configuração
 
 In the `src/const.ts` file, you can make some modifications according to your needs.
 
 ```ts
-/**
- * title {string} website title
- * favicon {string} website favicon url
- * description {string} website description
- * author {string} author
- * avatar {string} Avatar used in the profile
- * motto {string} used in the profile
- * url {string} Website link
- * recentBlogSize {number} Number of recent articles displayed in the sidebar
- * archivePageSize {number} Number of articles on archive pages
- * postPageSize {number} Number of articles on blog pages
- * feedPageSize {number} Number of articles on feed pages
- * beian {string} Chinese policy
- */
 export const site = {
-    title: 'Astro Theme Yi',
-    favicon: '/favicon.svg',
-    description: 'Welcome to my independent blog website! ',
-    author: "xxxxx",
-    avatar: '/images/avatar.png',
-    motto: 'Keep moving.',
-    url: 'https://astro-yi-nu.vercel.app',
-    recentBlogSize: 5,
-    archivePageSize: 25,
-    postPageSize: 10,
-    feedPageSize: 20,
-    beian: ''
-  }
+  title: 'Astro Theme Yi',
+  favicon: '/images/favicon.svg',
+  description: 'Welcome to my independent blog website! ',
+  author: 'xxxxx',
+  avatar: '/images/avatar.png',
+  motto: 'Keep moving.',
+  url: 'https://astro-yi-nu.vercel.app',
+  recentBlogSize: 5,
+  archivePageSize: 25,
+  postPageSize: 10,
+  feedPageSize: 20,
+  beian: ''
+}
 
-/**
- * busuanzi {boolean} Enable Busuanzi Statistics Functionality
- * lang {string} Default website language: English
- * codeFoldingStartLines {number}
- */
 export const config = {
   busuanzi: false,
   lang: 'en', // English: en | 简体中文: zh-cn
@@ -95,39 +66,39 @@ export const config = {
  */
 export const categories = [
   {
-    name: "Homepage",
-    iconClass: "ri-home-4-line",
-    href: "/",
+    name: 'Homepage',
+    iconClass: 'ri-home-4-line',
+    href: '/',
   },
   {
-    name: "Blog",
-    iconClass: "ri-draft-line",
-    href: "/posts/1",
+    name: 'Blog',
+    iconClass: 'ri-draft-line',
+    href: '/posts/1',
   },
   {
-    name: "Feed",
-    iconClass: "ri-lightbulb-flash-line",
-    href: "/feed/1",
+    name: 'Feed',
+    iconClass: 'ri-lightbulb-flash-line',
+    href: '/feed/1',
   },
   {
-    name: "Archive",
-    iconClass: "ri-archive-line",
-    href: "/archive/1",
+    name: 'Archive',
+    iconClass: 'ri-archive-line',
+    href: '/archive/1',
   },
   {
-    name: "Message",
-    iconClass: "ri-chat-1-line",
-    href: "/message/",
+    name: 'Message',
+    iconClass: 'ri-chat-1-line',
+    href: '/message/',
   },
   {
-    name: "Search",
-    iconClass: "ri-search-line",
-    href: "/search",
+    name: 'Search',
+    iconClass: 'ri-search-line',
+    href: '/search',
   },
   {
-    name: "More",
-    iconClass: "ri-more-fill",
-    href: "javascript:void(0);",
+    name: 'More',
+    iconClass: 'ri-more-fill',
+    href: 'javascript:void(0);',
     children: [
       {
         name: 'About',
@@ -180,42 +151,23 @@ export const infoLinks = [
   }
 ]
 
-/**
- * Donation feature
- * Please replace the image and paypal link before use.
- * enable {boolean}
- * tip {string}
- */
 export const donate = {
   enable: true,
-  tip: "Thanks for the coffee !!!☕",
-  wechatQRCode: "/WeChatQR.png",
-  alipayQRCode: "/AliPayQR.png",
-  paypalUrl: "https://paypal.me/xxxxxxxx",
+  tip: 'Thanks for the coffee !!!☕',
+  wechatQRCode: '/WeChatQR.png',
+  alipayQRCode: '/AliPayQR.png',
+  paypalUrl: 'https://paypal.me/xxxxxxxx',
 }
 
-/**
- * Friends Links Page
- * name {string}
- * url {string}
- * avatar {string}
- * description {string}
- */
-export const friendshipLinks =
-  [
-    {
-      name: "Cirry's Blog",
-      url: 'https://cirry.cn',
-      avatar: "https://cirry.cn/avatar.png",
-      description: 'frontend development'
-    },
-  ]
+export const friendshipLinks = [
+  {
+    name: "Cirry's Blog",
+    url: 'https://cirry.cn',
+    avatar: "https://cirry.cn/avatar.png",
+    description: 'frontend development'
+  }
+]
 
-/**
- * Comment Feature
- * enable {boolean}
- * type {string} giscus and waline are currently supported.
- */
 export const comment = {
   enable: false,
   type: 'giscus', // waline | giscus,
