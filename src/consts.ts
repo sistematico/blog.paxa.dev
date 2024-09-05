@@ -122,10 +122,12 @@ export const infoLinks = [
  */
 export const donate = {
   enable: true,
-  tip: "Obrigado! ☕",
-  wechatQRCode: "/WeChatQR.png",
-  alipayQRCode: "/AliPayQR.png",
-  paypalUrl: "https://paypal.me/xxxxxxxxxx",
+  tip: 'Obrigado! ☕',
+  wechatQRCode: '/WeChatQR.png',
+  alipayQRCode: '/AliPayQR.png',
+  paypalQRCode: '/images/donate/PayPalQR.png',
+  paypalUrl: 'https://www.paypal.com/donate/?business=F6FYBQ38G6QY2&no_recurring=0&currency_code=BRL',
+  githubUrl: 'https://github.com/sponsors/sistematico'
 }
 
 /**
