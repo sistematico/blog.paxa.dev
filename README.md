@@ -1,5 +1,7 @@
 # Paxá Blog
 
+[![Deploy](https://github.com/sistematico/blog.paxa.dev/actions/workflows/deploy.yml/badge.svg)](https://github.com/sistematico/blog.paxa.dev/actions/workflows/deploy.yml)
+
 ### Demo
 
 - [Blog](https://blog.paxa.dev)
