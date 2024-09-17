@@ -74,7 +74,7 @@ export function Search(props) {
                 <div class="flex  items-center  cursor-pointer">
                   <div class="divider-vertical"/>
                   <i class="ri-folder-2-fill mr-1"/>
-                  <a href={"/category/" + categoryName}>{categoryName}</a>
+                  <a href={"/cat/" + categoryName}>{categoryName}</a>
                 </div>
               ))}
 

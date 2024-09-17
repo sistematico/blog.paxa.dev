@@ -27,7 +27,7 @@ const resultPosts = sortPosts.splice(0, site.recentBlogSize);
       <a
         class="my-1 truncate block hover:text-skin-active"
         title={category + " (" + categoryCount[category] + ")"}
-        href={"/category/" + category}
+        href={"/cat/" + category}
       >
         {(category === 'uncategorized' ? t('sidebar.uncategorized') : category) + " (" + categoryCount[category] + ")"}
       </a>

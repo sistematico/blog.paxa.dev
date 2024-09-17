@@ -90,7 +90,7 @@ const tagCount = getCountByTagName(blogs);
       {
         Object.keys(categoryCount).map((category) => (
           <div class="my-2 break-all truncate">
-            <a class="hover:text-skin-active" title={category + " (" + categoryCount[category] + ")"} href={"/category/" + category}>
+            <a class="hover:text-skin-active" title={category + " (" + categoryCount[category] + ")"} href={"/cat/" + category}>
               {category + " (" + categoryCount[category] + ")"}
             </a>
           </div>
