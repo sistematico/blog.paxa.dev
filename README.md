@@ -1,39 +1,54 @@
-# Paxá Blog
+# 🐪 Paxá Blog
 
 [![Deploy](https://github.com/sistematico/blog.paxa.dev/actions/workflows/deploy.yml/badge.svg)](https://github.com/sistematico/blog.paxa.dev/actions/workflows/deploy.yml)
 
-### Demo
+### 🌎 Demo
 
 - [Blog](https://blog.paxa.dev)
 
-A content-focused Astro blog theme, Yi, in Chinese, it means fast and concise.
+Meu blog, baseado no tema [Astro Yi](https://github.com/cirry/astro-yi) usando o [Astro](https://astro.build).
 
-### 🔥 Features
+### 🔥 Características
 
-- [x] Supports multi-platform display.
-- [x] Supports dark mode.
-- [x] support i18n
-- [x] Supports search functionality.
-- [x] SEO-friendly
-- [x] Supports sitemap and RSS.
-- [x] Supports article drafts.
+- [x] Suporta exibição multiplataforma.
+- [x] Suporta modo escuro.
+- [x] Suporta i18n.
+- [x] Suporta pesquisa.
+- [x] SEO-friendly.
+- [x] Suporta mapa do site e RSS.
+- [x] Suporta rascunhos de artigos.
 - [x] Image lazy loading and scaling support.
 - [x] Supports fixed permalinks for articles.
 
 ### 👨🏻‍💻 Instalação manual
 
-Recommended for use `nodejs >= 18`，`pnpm >= 8`。
+Para a instalação é recomendado o uso do `bun >= 1.1.27` ou `nodejs >= 18`，`pnpm >= 8`.
+
+#### 🚀 Instalação usando o Bun
 
 ```bash
-git clone https://github.com/cirry/astro-yi.git
-cd astro-yi
+git clone https://github.com/sistematico/blog.paxa.dev.git
+cd blog.paxa.dev
+bun install
+bun run dev # preview, starts local dev server at localhost:4321
+```
+
+```bash
+bun run build # build your production site to ./dist
+```
+
+#### 🚀 Instalação usando o Node.js, npm e pnpm
+
+```bash
+git clone https://github.com/sistematico/blog.paxa.dev.git
+cd blog.paxa.dev
 npm install -g pnpm # install pnpm
 pnpm i  # installs dependencies
 npm run dev # preview, starts local dev server at localhost:4321
 ```
 
 ```bash
-npm run build # build your production site to ./dist 
+npm run build # build your production site to ./dist
 ```
 After the packaging is completed, Upload the `dist` folder to the web server directory.
 
@@ -192,7 +207,7 @@ export const comment = {
 
 Please modify your website configuration, comment system configuration, appreciation function image, personal information links, and of course, you can also modify other configuration content.
 
-### Write a blog 
+### Write a blog
 
 With the Yi theme, all you need to do is create a new md document in `src/content/blog` and you're ready to start writing your blog.
 
