@@ -25,4 +25,4 @@ pnpm-debug.log*
 .DS_Store
 
 # custom
-*old*
+*.old*

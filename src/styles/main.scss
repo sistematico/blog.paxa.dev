@@ -2,13 +2,14 @@
 @import "remixicon/fonts/remixicon.css";
 @import "tocbot/dist/tocbot.css";
 @import "remark-aside.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
   font-family: "jetbrains-mono";
-  src: url('./JetBrainsMono-Regular.ttf');
+  src: url('/fonts/jetbrains/JetBrainsMono-Regular.ttf');
 }
 
 /* tailwindcss */
@@ -30,7 +31,6 @@ menu {
 }
 
 @layer base {
-
   :root,
   html[data-theme="light"] {
     --color-fill: 241, 241, 241;
@@ -63,7 +63,6 @@ menu {
   html[data-theme="dark"] #sun-icon {
     display: block;
   }
-
 }
 
 @layer components {
