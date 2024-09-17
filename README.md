@@ -58,18 +58,17 @@ In the `src/const.ts` file, you can make some modifications according to your ne
 
 ```ts
 export const site = {
-  title: 'Astro Theme Yi',
+  title: 'Paxá Blog',
   favicon: '/images/favicon.svg',
-  description: 'Welcome to my independent blog website! ',
+  description: 'Meu blog pessoal',
   author: 'xxxxx',
   avatar: '/images/avatar.png',
   motto: 'Keep moving.',
-  url: 'https://astro-yi-nu.vercel.app',
+  url: 'https://blog.paxa.dev',
   recentBlogSize: 5,
   archivePageSize: 25,
   postPageSize: 10,
   feedPageSize: 20,
-  beian: ''
 }
 
 export const config = {

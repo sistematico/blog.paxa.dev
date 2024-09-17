@@ -1,0 +1,24 @@
+---
+import links from '@/data/links.json';
+import Base from '@/layouts/base.astro';
+
+const favoritos = links.sort((a, b) => {
+  return a.cat.localeCompare(b.cat);
+});
+---
+
+<Base>
+  <div class="container p-4">
+    <h1 class="text-2xl font-bold text-skin-base">Favoritos</h1>
+    <ul class="space-y-4">
+      {
+        favoritos.map(item => (
+          <li>
+            <a href={item.items} class="text-skin-base hover:text-skin-primary">{link.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Base>
+

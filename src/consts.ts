@@ -13,12 +13,11 @@
  * archivePageSize {number} Number of articles on archive pages
  * postPageSize {number} Number of articles on blog pages
  * feedPageSize {number} Number of articles on feed pages
- * beian {string} Chinese policy
  */
 export const site = {
   title: 'Paxá Blog', // required
   favicon: '/images/favicon.svg', // required
-  description: 'Meu blog pessoal ',
+  description: 'Meu blog pessoal',
   author: 'Paxá', // required
   avatar: '/images/logo.png', // required
   motto: 'Ações falam mais alto que palavras.',
@@ -27,7 +26,6 @@ export const site = {
   archivePageSize: 25,
   postPageSize: 10,
   feedPageSize: 20,
-  beian: '',
 }
 
 /**
@@ -66,24 +64,23 @@ export const categories = [
     iconClass: "ri-search-line",
     href: "/search",
   },
-  // {
-  //   name: "Mais",
-  //   iconClass: "ri-more-fill",
-  //   href: "javascript:void(0);",
-  //   children: [
-  //     {
-  //       name: 'About',
-  //       iconClass: 'ri-information-line',
-  //       href: '/about',
-  //     },
-  //     {
-  //       name: 'Friends',
-  //       iconClass: 'ri-user-5-line',
-  //       href: '/friends',
-  //       target: '_self',
-  //     },
-  //   ]
-  // }
+  {
+    name: "Mais",
+    iconClass: "ri-more-fill",
+    href: "javascript:void(0);",
+    children: [
+      {
+        name: 'Favoritos',
+        iconClass: 'ri-bookmark-3-fill',
+        href: '/favoritos',
+      },
+      {
+        name: 'Snippets',
+        iconClass: 'ri-code-fill',
+        href: '/snippets',
+      },
+    ]
+  }
 ]
 
 /**
