@@ -49,3 +49,7 @@ bun run dev # ou bun dev
 ## Referências
 - https://bun.sh/guides/ecosystem/vite
 - https://vitejs.dev/guide/#scaffolding-your-first-vite-project
+
+## Dúvidas e sugestões
+
+Se tiver alguma dúvida ou sugestão, sinta-se livre para comentar o post ou <a href="mailto:paxa@paxa.dev">entrar em contato</a>.
