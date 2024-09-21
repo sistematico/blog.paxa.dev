@@ -1,5 +1,5 @@
 ---
-import {site} from '../../consts';
+import { site } from '../../consts';
 import PostView from '../../components/PostView.astro'
 import IndexPage from '../../layouts/base.astro'
 import Pagination from '../../components/Pagination.astro';
@@ -14,7 +14,6 @@ export async function getStaticPaths({paginate}) {
 
 const {page}: {page: { [x: string]: any;data: any[] }} = Astro.props;
 ---
-
 
 <IndexPage frontmatter={{comment:false}}>
   {

@@ -1,7 +1,6 @@
 ---
 import links from '@/data/links.json';
 import Base from '@/layouts/base.astro';
-import Card from '@/components/card.astro';
 
 const favoritos = links.sort((a, b) => {
   return a.cat.localeCompare(b.cat);
@@ -9,27 +8,26 @@ const favoritos = links.sort((a, b) => {
 ---
 
 <Base>
-  <!-- <div class="container p-4">
-    <h1 class="text-2xl font-bold text-skin-base">Favoritos</h1>
-    <ul class="space-y-4">
-      {
-        favoritos.map(item => (
-          <li>
-            <a href={item.links} class="text-skin-base hover:text-skin-primary">{link.name}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </div> -->
-
   <div class="container p-4">
-    <h1 class="text-2xl font-bold text-skin-base">Favoritos</h1>    
+    <!-- <h1 class="text-2xl font-extrabold text-skin-base">Favoritos</h1> -->
     {
       favoritos.map(item => (
-        <h2 class="text-xl font-bold text-skin-base">{item.cat}</h2>
-        // <Card title={item.name} />
+        <div>
+          <h3 class="text-xl font-bold text-skin-base my-1">{item.cat}</h3>
+          <p class="text-sm italic text-skin-base mb-3">{item.desc}</p>
+          <ul class="list-disc list-inside space-y-2">
+            {
+              item.links.map(link => (
+                <li>
+                  <a href={link.url} class="hover:text-skin-primary" target="_blank">{link.name}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       ))
-    }    
+    }
   </div>
 </Base>
+
 

@@ -1,16 +1,16 @@
 ---
-import {getCollectionByName} from "../utils/getCollectionByName";
-import getUniqueTags from "../utils/getUniqueTags";
-import getCountByCategory from "../utils/getCountByCategory";
-import HeaderLink from './HeaderLink.astro';
-import ThemeIcon from './ThemeIcon.astro'
-import MenuIcon from './MenuIcon.astro'
-import {site, categories, infoLinks} from '../consts';
-import {t} from "../i18n/utils";
-import AsideIcon from "./SidebarIcon.astro";
-import getCountByTagName from "../utils/getCountByTagName";
+import { getCollectionByName } from '@/utils/getCollectionByName';
+import getUniqueTags from '@/utils/getUniqueTags';
+import getCountByCategory from '@/utils/getCountByCategory';
+import HeaderLink from '@/components/HeaderLink.astro';
+import ThemeIcon from '@/components/ThemeIcon.astro'
+import MenuIcon from '@/components/MenuIcon.astro'
+import { site, categories, infoLinks } from '@/consts';
+import { t } from '@/i18n/utils';
+import AsideIcon from '@/components/SidebarIcon.astro';
+import getCountByTagName from '@/utils/getCountByTagName';
 
-const blogs = await getCollectionByName('blog')
+const blogs = await getCollectionByName('blog');
 const tagArr = getUniqueTags(blogs);
 const categoryCount = getCountByCategory(blogs);
 const tagCount = getCountByTagName(blogs);
@@ -19,15 +19,27 @@ const tagCount = getCountByTagName(blogs);
 <header class="fixed top-0 w-full bg-skin-fill text-skin-base z-10">
   <div class="flex items-center justify-between container">
     <div class="block xl:hidden">
-      <MenuIcon></MenuIcon>
+      <MenuIcon />
     </div>
-    <a class="text-2xl p-4" href="/">{site.title}</a>
+    <div>
+      <a class="flex items-center text-2xl p-4" href="/">
+        <img class="h-10 w-10 me-2 logo" src="/images/logo.svg" alt={site.title}>
+        {site.title}
+      </a>
+    </div>
     <div class="flex items-center">
       <div class="hidden xl:block">
         <div class="flex items-center space-x-5 pr-4">
           {
             categories.map(category => (
-              <HeaderLink href={category.href} icon={category.iconClass} target={category.target ? category.target : '_self'} children={category.children ? category.children : []}>{category.name}</HeaderLink>
+              <HeaderLink 
+                href={category.href} 
+                icon={category.iconClass} 
+                target={'target' in category ? category.target : '_self'} 
+                childrenLink={category.children ? category.children : []}
+              >
+                {category.name}
+              </HeaderLink>
             ))
           }
         </div>
@@ -115,6 +127,5 @@ const tagCount = getCountByTagName(blogs);
         ))
       }
     </div>
-
   </div>
 </header>

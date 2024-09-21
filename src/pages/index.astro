@@ -10,7 +10,7 @@ import divide from 'lodash/divide';
 
 const currentPage = 1
 const blogs = await getCollectionByName('blog');
-const totalPage = ceil(divide(blogs.length, site.postPageSize))
+const totalPage = ceil(divide(blogs.length, site.postPageSize));
 
 let sortedPosts = orderBySticky(blogs);
 

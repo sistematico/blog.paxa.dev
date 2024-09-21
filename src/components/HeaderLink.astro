@@ -1,11 +1,11 @@
 ---
-const {href, icon: iconClass, children, target, ...props} = Astro.props;
-
-const {pathname} = Astro.url;
-const hrefMath = href.split('/')
-const pathnameMatch = pathname.split('/')
-const isActive = hrefMath[1] === pathnameMatch[1]
+const { pathname } = Astro.url;
+const pathnameMatch = pathname.split('/');
+const { href, icon: iconClass, childrenLink: children, target, ...props } = Astro.props;
+const hrefMath = href.split('/');
+const isActive = hrefMath[1] === pathnameMatch[1];
 ---
+
 <div class="box relative h-10 w-auto flex items-center">
   <a href={href} target={target} class:list={[isActive ? 'header-link-active' : '', 'hover:header-link-hover']} {...props}>
     <i class={iconClass}/>
@@ -14,34 +14,34 @@ const isActive = hrefMath[1] === pathnameMatch[1]
       children.length > 0 && <i class="ri-arrow-down-s-line"></i>
     }
   </a>
-  {children && children.length > 0 && (
-    <div class="dropdown cursor-pointer border rounded bg-skin-fill p-4">
-      <ul class="space-y-4 w-28">
-        {
-          children.map(child =>
-            <li class="text-center hover:text-skin-active select-none">
-              <i class={child.iconClass}></i>
-              <a target={child.target ? child.target : "_self"} href={child.href}>{child.name}</a>
-            </li>
-          )
-        }
-      </ul>
-    </div>
-  )}
-
+  {
+    children && children.length > 0 && (
+      <div class="dropdown cursor-pointer border rounded bg-skin-fill p-4">
+        <ul class="space-y-4 w-28">
+          {
+            children.map(child =>
+              <li class="text-center hover:text-skin-active select-none">
+                <i class={child.iconClass}></i>
+                <a target={child.target ? child.target : "_self"} href={child.href}>{child.name}</a>
+              </li>
+            )
+          }
+        </ul>
+      </div>
+    )
+  }
 </div>
 
 <style>
-  .dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: -40%;
-  }
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -40%;
+}
 
-  .box:hover .dropdown {
-    display: block;
-  }
-
+.box:hover .dropdown {
+  display: block;
+}
 </style>
 

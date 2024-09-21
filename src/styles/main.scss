@@ -63,6 +63,20 @@ menu {
   html[data-theme="dark"] #sun-icon {
     display: block;
   }
+
+  html[data-theme="dark"] .logo {
+    filter: invert(73%) sepia(11%) saturate(192%) hue-rotate(344deg) brightness(109%) contrast(83%);
+  }
+
+  html[data-theme="light"] .logo {
+    // filter: invert(9%) sepia(3%) saturate(3675%) hue-rotate(344deg) brightness(93%) contrast(86%);
+    // filter: invert(73%) sepia(11%) saturate(192%) hue-rotate(344deg) brightness(109%) contrast(83%);
+    // fill: #28231f;
+    // color: #28231f;
+    // color: #504945;
+    // filter: invert(10%) sepia(4%) saturate(2716%) hue-rotate(344deg) brightness(90%) contrast(88%);
+    filter: invert(26%) sepia(1%) saturate(3131%) hue-rotate(338deg) brightness(100%) contrast(86%);
+  }
 }
 
 @layer components {

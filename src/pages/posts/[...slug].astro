@@ -30,8 +30,9 @@ const sortPosts = sortPostsByDate(posts);
 const currentPostIndex = sortPosts.findIndex(
   (postItem) => postItem.data.title === entry.data.title
 );
-let prevPost: number | undefined;
-let nextPost: number | undefined;
+
+let prevPost: typeof sortPosts[0] | undefined;
+let nextPost: typeof sortPosts[0] | undefined;
 
 if (sortPosts[currentPostIndex - 1]) {
   prevPost = sortPosts[currentPostIndex - 1];

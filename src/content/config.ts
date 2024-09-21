@@ -26,4 +26,14 @@ const feed = defineCollection({
   })
 });
 
-export const collections = { blog, feed };
+const snippets = defineCollection({
+  type: 'content',
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      image: image().optional(),
+    })
+});
+
+export const collections = { blog, feed, snippets };
