@@ -1,7 +1,7 @@
 import {h as _h, s as _s} from "hastscript";
 import {remove} from "unist-util-remove";
 import {visit} from "unist-util-visit";
-import {t} from '../i18n/utils.ts';
+import {t} from '@/i18n/utils.ts';
 const variants = new Set(["note", "tip", "caution", "danger"]);
 
 function defaultLabel(v) {

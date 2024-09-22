@@ -1,7 +1,7 @@
 {
-  "name": "astro-blog",
+  "name": "paxa-blog",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.2",
   "scripts": {
     "dev": "bun x astro dev",
     "start": "astro dev",
@@ -38,6 +38,6 @@
   },
   "devDependencies": {
     "@types/bun": "^1.1.8",
-    "sass": "^1.72.0"
+    "sass": "^1.76.0"
   }
 }

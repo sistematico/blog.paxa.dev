@@ -26,6 +26,21 @@ function customRehypeLazyLoadImage() {
   }
 }
 
+// css: {
+//   preprocessorOptions: {
+//     scss: {
+//       api: 'modern-compiler' // or "modern"
+//     }
+//   }
+// }
+// css: {
+//   preprocessorOptions: {
+//     scss: {
+//       api: 'modern-compiler'
+//     }
+//   }
+// },
+
 export default defineConfig({
   site: 'https://blog.paxa.dev',
   integrations: [

@@ -1,4 +1,3 @@
 [
-  { "name": "Hyman Heinlen", "email": "hyman2@noveltycycles.example.com" },
-  { "name": "Marcos Cosby", "email": "marcos@noveltycycles.example.com" }
+  { "name": "Projeto 1", "desc": "Descrição do projeto #01", "url": "https://www.google.com", "repo": "https://github.com/sistematico/projeto-01" }
 ]
