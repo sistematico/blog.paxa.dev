@@ -38,7 +38,6 @@ export default {
         active: withOpacity("--color-text-active")
       },
     },
-
     backgroundColor: {
       skin: {
         fill: withOpacity("--color-fill"),
@@ -60,6 +59,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'display': ['Nunito'],
+        'body': ['Nunito'],
+        'nunito': ['Nunito', 'sans-serif']
+      },
       colors: {
         custom: {
           title: '#555',
@@ -79,4 +83,3 @@ export default {
   },
   plugins: [],
 }
-

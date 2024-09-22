@@ -26,7 +26,9 @@ bun create vite meu-app-vue --template vue-ts
 cd meu-app-vue
 ```
 
-> Você precisa ter o [Bun](https://bun.sh) instalado.
+:::caution
+Você precisa ter o [Bun](https://bun.sh) instalado.
+:::
 
 ## Configuração do projeto
 

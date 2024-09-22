@@ -1,39 +1,24 @@
 ---
-import { getCollection } from 'astro:content';
-import Base from '@/layouts/base.astro';
-import Card from '@/components/SnippetsCard.astro';
+import { getCollection } from "astro:content";
+import Base from "@/layouts/base.astro";
+import Card from "@/components/SnippetsCard.astro";
 
-const allSnippets = await getCollection('snippets');
+const allSnippets = await getCollection("snippets");
 ---
 
-<Base
-  title="Code Snippets"
-  description="A collection of snippets which are commonly used in solving machines."
->
-  <!-- <div class="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16"> -->
-    <h1
-      class="mb-3 text-2xl font-bold tracking-tight text-black md:text-3xl dark:text-white"
-      transition:name="heading"
-    >
-      Snippets
-    </h1>
-
-    <p class="mb-3 text-gray-600 dark:text-gray-400">
-      These are a collection of code snippets I used in the past and saved which
-      helped me solve the machines. Hopefully, it's also helpful for you too.
-    </p>
-
-    <div class="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
-      {
-        allSnippets.map((snippet) => (
-          <Card
-            key={snippet.slug}
-            title={snippet.data.title}
-            slug={snippet.slug}
-            description={snippet.data.description}
-          />
-        ))
-      }
-    </div>
-  <!-- </div> -->
+<Base title="Snippets de Código" description="Uma coleção de snippets que são comumente usados ​​na resolução de problemas.">
+  <h2 class="text-2xl font-bold text-skin-base py-0">Snippets</h2>
+  <p class="mb-3 my-0">Alguns snippets que me ajudaram e talvez possam te ajudar também.</p>
+  <div class="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
+    {
+      allSnippets.map((snippet) => (
+        <Card
+          key={snippet.slug}
+          title={snippet.data.title}
+          slug={snippet.slug}
+          description={snippet.data.description}
+        />
+      ))
+    }
+  </div>
 </Base>

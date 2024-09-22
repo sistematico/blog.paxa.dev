@@ -8,6 +8,6 @@ const posts = await getCollectionByName('blog');
 ---
 
 <Base>
-  <div class="text-2xl mb-4 text-skin-base">{t('search.search')}</div>
+  <h2 class="text-2xl font-bold text-skin-base mb-2">{t('search.search')}</h2>
   <SearchComponent client:only="solid-js" posts={posts}/>
 </Base>

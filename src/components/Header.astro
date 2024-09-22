@@ -14,6 +14,7 @@ const blogs = await getCollectionByName('blog');
 const tagArr = getUniqueTags(blogs);
 const categoryCount = getCountByCategory(blogs);
 const tagCount = getCountByTagName(blogs);
+const title = 'Paxá';
 ---
 
 <header class="fixed top-0 w-full bg-skin-fill text-skin-base z-10">
@@ -22,9 +23,9 @@ const tagCount = getCountByTagName(blogs);
       <MenuIcon />
     </div>
     <div>
-      <a class="flex items-center text-2xl p-4" href="/">
-        <img class="h-10 w-10 me-2 logo" src="/images/logo.svg" alt={site.title}>
-        {site.title}
+      <a class="flex items-center text-3xl font-bold font-nunito p-4" href="/">
+        <img class="h-9 w-9 me-2 logo" src="/images/logo.svg" alt={site.title}>
+        {title}
       </a>
     </div>
     <div class="flex items-center">

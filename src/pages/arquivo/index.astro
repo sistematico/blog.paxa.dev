@@ -21,7 +21,7 @@ const resultPosts = getPostsByYear(sortedPosts);
       .sort((a, b) => Number(b) - Number(a))
       .map((year) => (
         <div>
-          <div class="text-2xl font-extrabold my-4">{year}</div>
+          <div class="text-2xl font-bold">{year}</div>
           <ul>
             {resultPosts[year].map((post) => (
               <li style="list-style-type: disc;" class="ml-4 my-2">

@@ -8,22 +8,17 @@ import { site } from '@/consts';
 import ceil from 'lodash/ceil';
 import divide from 'lodash/divide';
 
-const currentPage = 1
+const currentPage = 1;
 const blogs = await getCollectionByName('blog');
 const totalPage = ceil(divide(blogs.length, site.postPageSize));
-
 let sortedPosts = orderBySticky(blogs);
 
-if (sortedPosts.length > site.postPageSize) {
-  sortedPosts = sortedPosts.splice(0, site.postPageSize);
-}
+if (sortedPosts.length > site.postPageSize) sortedPosts = sortedPosts.splice(0, site.postPageSize);
 ---
 
 <Base>
   {
-    sortedPosts.map(blog =>
-      <PostView blog={blog} />
-    )
+    sortedPosts.map(blog => <PostView blog={blog} />)
   }
   {
     totalPage > 1 ?

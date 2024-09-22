@@ -41,7 +41,7 @@ export const ptBR = {
   'sidebar.recentArticle': 'Artigos Recentes',
   'sidebar.recentComments': 'Comentários Recentes',
   'sidebar.tags': 'Tags',
-  'sidebar.uncategorized': 'sem-categoria',
+  'sidebar.uncategorized': 'principal',
   'title.draft': 'rascunho',
   'title.minutes': ' Minutos',
   'title.words': ' Palavras'

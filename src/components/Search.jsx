@@ -54,7 +54,9 @@ export function Search(props) {
         />
       </label>
 
-      {resultPosts().length > 0 && <div class="my-2">{t('search.searchLabelOne')}<span class="px-2 font-bold text-skin-active">{resultPosts().length}</span>{t('search.searchLabelTwo')}</div>}
+      {
+        resultPosts().length > 0 && <div class="my-2">{t('search.searchLabelOne')}<span class="font-bold text-skin-active">{resultPosts().length}</span>{t('search.searchLabelTwo')}</div>
+      }
 
       <div class="my-4">
         {resultPosts().map(post =>

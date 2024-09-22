@@ -109,7 +109,7 @@ export const categories = [
   {
     name: 'Search',
     iconClass: 'ri-search-line',
-    href: '/search',
+    href: '/busca',
   },
   {
     name: 'More',
