@@ -1,16 +1,13 @@
 ---
-import PostViewTitle from '@/components/PostViewTitle.astro'
-import { t } from '@/i18n/utils'
-const {blog} = Astro.props;
-const {data, slug} = blog
+import PostViewTitle from '@/components/PostViewTitle.astro';
+import { t } from '@/i18n/utils';
+
+const { blog } = Astro.props;
+const { data, slug } = blog;
 ---
 
 <div>
-  <PostViewTitle
-    slug={`/posts/${slug}`}
-    {...data}
-  >
-  </PostViewTitle>
+  <PostViewTitle slug={`/posts/${slug}`} {...data} />
   <p class="break-all text-skin-base mb-2">
     {
       data.description ? data.description : ''

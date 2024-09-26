@@ -35,7 +35,6 @@ if (totalPage === 1) {
     ];
   }
 }
-
 ---
 
 <div class="flex items-center justify-center my-16 text-skin-base">
@@ -47,13 +46,8 @@ if (totalPage === 1) {
     )
   }
   {
-    pager.map((i) =>
-      currentPage === i ? (
-        <a
-          class="text-skin-active"
-          href={prefixUrl + i}
-          style="line-height:32px;"
-        >
+    pager.map((i) => currentPage === i ? (
+        <a class="text-skin-active" href={prefixUrl + i} style="line-height:32px;">
           {i}
         </a>
       ) : (
@@ -65,15 +59,14 @@ if (totalPage === 1) {
   }
   {
     pager.length > 4 && (
-      <a
-        href={prefixUrl + totalPage}
-        style="font-size:18px;line-height:32px;"
-      >
+      <a href={prefixUrl + totalPage} style="font-size:18px;line-height:32px;">
         <i class="ri-skip-right-line"></i>
       </a>
     )
   }
-  {totalPage > 5 && t('pagination.total') + totalPage + t('pagination.unit')}
+  {
+    totalPage > 5 && t('pagination.total') + totalPage + t('pagination.unit')
+  }
 </div>
 
 <style>

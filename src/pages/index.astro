@@ -18,7 +18,9 @@ if (sortedPosts.length > site.postPageSize) sortedPosts = sortedPosts.splice(0, 
 
 <Base>
   {
-    sortedPosts.map(blog => <PostView blog={blog} />)
+    sortedPosts.map(blog => 
+      <PostView blog={blog} />
+    )
   }
   {
     totalPage > 1 ?

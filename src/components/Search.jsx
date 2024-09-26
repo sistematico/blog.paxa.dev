@@ -1,8 +1,8 @@
-import {createSignal} from "solid-js";
-import _ from 'lodash'
-import {dealLabel} from "../utils/dealLabel.ts"
-import {formatDate} from "../utils/formatDate.ts";
-import {t} from '../i18n/utils.ts'
+import { createSignal } from 'solid-js';
+import {dealLabel} from '@/utils/dealLabel.ts';
+import {formatDate} from '@/utils/formatDate.ts';
+import {t} from '@/i18n/utils.ts';
+import _ from 'lodash';
 
 export function Search(props) {
   const [inputVal, setInputVal] = createSignal('')
@@ -55,7 +55,12 @@ export function Search(props) {
       </label>
 
       {
-        resultPosts().length > 0 && <div class="my-2">{t('search.searchLabelOne')}<span class="font-bold text-skin-active">{resultPosts().length}</span>{t('search.searchLabelTwo')}</div>
+        resultPosts().length > 0 && 
+          <div class="my-2">
+            {t('search.searchLabelOne')}
+            <span class="font-bold text-skin-active">{resultPosts().length}</span>
+            {t('search.searchLabelTwo')}
+          </div>
       }
 
       <div class="my-4">
@@ -72,7 +77,7 @@ export function Search(props) {
                   <div class="tag">{formatDate(post.data.date)}</div>
                 </div> : ''}
 
-              {dealLabel(post.data.category).filter(item => item !== 'uncategorized').map((categoryName, categoryNameIndex) => (
+              {dealLabel(post.data.category).filter(item => item !== 'uncategorized').map((categoryName, _) => (
                 <div class="flex  items-center  cursor-pointer">
                   <div class="divider-vertical"/>
                   <i class="ri-folder-2-fill mr-1"/>
@@ -80,7 +85,7 @@ export function Search(props) {
                 </div>
               ))}
 
-              {dealLabel(post.data.tags).map((tagName, tagIndex) => (
+              {dealLabel(post.data.tags).map((tagName, _) => (
                 <div class="flex  items-center  cursor-pointer">
                   <div class="divider-vertical"/>
                   <i class="ri-price-tag-3-fill mr-1"/>

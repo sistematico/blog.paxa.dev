@@ -1,10 +1,8 @@
 ---
-import {t} from '../i18n/utils'
+import { t } from '@/i18n/utils';
 ---
-<div
-  id="toc"
-  class="shadow-lg rounded-lg my-4 py-2 px-2 bg-skin-card sticky top-20"
->
+
+<div id="toc" class="shadow-lg rounded-lg my-4 py-2 px-2 bg-skin-card sticky top-20">
   <div class="flex items-center border-b border-b-gray-300 mb-1">
     <i class="ri-list-check menu-icon"/>
     {t('blog.tableOfContent')}
@@ -23,10 +21,7 @@ import {t} from '../i18n/utils'
 
   .toc_container {
     overflow-y: scroll;
-    /* webkit */
-    /* firefox */
     scrollbar-width: none;
-    /* ie */
     -ms-overflow-style: none;
   }
 
@@ -43,7 +38,7 @@ import {t} from '../i18n/utils'
 </style>
 
 <script>
-  import * as tocbot from "tocbot";
+  import * as tocbot from 'tocbot';
 
   tocbot.init({
     tocSelector: ".toc-container",
@@ -55,7 +50,9 @@ import {t} from '../i18n/utils'
     scrollSmoothDuration: 200,
     collapseDepth: 3,
   });
+
   let toc = document.getElementById("toc");
+  
   if (toc) {
     tocbot.refresh();
     let tocContainer = document.getElementsByClassName('toc-container')
