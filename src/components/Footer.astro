@@ -5,20 +5,16 @@ import { t } from '@/i18n/utils';
 <div class="footer container p-4">
   <div class="flex items-center flex-wrap justify-center mb-4 text-skin-base">
     <div>
-      <span class="cursor-default">Copyright</span>
-      <i class="ri-copyright-line align-middle"></i>
-      <span class="align-middle">2024</span>
+      <a href="https://github.com/sistematico/blog.paxa.dev/blob/main/LICENSE" target="_blank">UnLicense</a>
+      {new Date().getFullYear()} 
+      <a href="https://paxa.dev">Paxá</a>
     </div>
     <div class="divider-vertical"></div>
     <a href="/sitemap-0.xml">{t('footer.sitemap')}</a>
+    <div class="social mx-2">
+      <a href="mailto:paxa@paxa.dev">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail size-4"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+      </a>
+    </div>
   </div>
 </div>
-
-<style>
-  .footer {
-    height: 80px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-</style>

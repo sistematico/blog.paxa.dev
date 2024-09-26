@@ -40,6 +40,13 @@ function customRehypeLazyLoadImage() {
 //     }
 //   }
 // },
+// css: {
+//   preprocessorOptions: {
+//     sass: {
+//       api: 'modern-compiler' // or "modern"
+//     }
+//   }
+// }
 
 export default defineConfig({
   site: 'https://blog.paxa.dev',
@@ -61,5 +68,14 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkModifiedTime, resetRemark, remarkDirective, remarkAsides({}),remarkCollapse({})],
     rehypePlugins: [customRehypeLazyLoadImage]
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler' // or "modern"
+        }
+      }
+    }
   }
 });

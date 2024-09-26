@@ -298,3 +298,29 @@ menu {
   display: none;
   /* box-shadow: 0 1px 15px rgba(27, 31, 35, .15), 0 0 1px rgba(106, 115, 125, .35); */
 }
+
+.footer {
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.social a {
+  // color: #777;
+  color: rgba(var(--color-text), .3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(var(--color-border), .5);
+  padding: 4px;
+  height: 32px;
+  width: 32px;
+  border-radius: 6px;
+  transition: all .3s ease;
+}
+
+.social a:hover {
+  color: rgba(var(--color-text), .3);
+  border: 1px solid rgba(var(--color-border-active), 1);
+}
