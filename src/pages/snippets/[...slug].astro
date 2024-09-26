@@ -1,6 +1,6 @@
 ---
+import Base from '@/layouts/Base.astro';
 import { getCollection } from 'astro:content';
-import MainLayout from '@/layouts/base.astro';
 
 export async function getStaticPaths() {
   const snippetsEntries = await getCollection('snippets');
@@ -14,10 +14,7 @@ const { snippet } = Astro.props;
 const { Content } = await snippet.render();
 ---
 
-<MainLayout
-  title={snippet.data.title}
-  description="A collection of snippets which are commonly used in solving machines."
->
+<Base title={snippet.data.title} description="A collection of snippets which are commonly used in solving machines.">
   <div>
     <div class="mb-8">
       <h1 class="font-bold text-2xl tracking-tight mb-4 text-skin-base">
@@ -31,4 +28,4 @@ const { Content } = await snippet.render();
       <Content />
     </div>
   </div>
-</MainLayout>
+</Base>

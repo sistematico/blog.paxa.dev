@@ -1,6 +1,6 @@
 ---
+import Base from '@/layouts/Base.astro';
 import links from '@/data/links.json';
-import Base from '@/layouts/base.astro';
 
 const favoritos = links.sort((a, b) => {
   return a.cat.localeCompare(b.cat);
