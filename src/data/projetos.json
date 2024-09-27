@@ -1,3 +1,14 @@
 [
-  { "name": "Projeto 1", "desc": "Descrição do projeto #01", "url": "https://www.google.com", "repo": "https://github.com/sistematico/projeto-01" }
+  {
+    "name": "AgroComm",
+    "desc": "Commodities Agropecuárias",
+    "url": "https://agrocomm.com.br",
+    "repo": "https://github.com/sistematico/agrocomm"
+  },
+  {
+    "name": "ReConta",
+    "desc": "Organizador financeiro simples e rápido ",
+    "url": "https://reconta.app",
+    "repo": "https://github.com/sistematico/reconta"
+  }
 ]
