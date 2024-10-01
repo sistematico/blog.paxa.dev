@@ -13,6 +13,8 @@ import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 import { visit } from 'unist-util-visit'
 import { pluginCollapsibleSections } from '@expressive-code/plugin-collapsible-sections'
 
+import db from '@astrojs/db';
+
 function customRehypeLazyLoadImage() {
   return (tree) => {
     visit(tree, (node) => {
@@ -50,21 +52,15 @@ function customRehypeLazyLoadImage() {
 
 export default defineConfig({
   site: 'https://blog.paxa.dev',
-  integrations: [
-    sitemap(), 
-    tailwind(), 
-    solid(), 
-    expressiveCode({
-      plugins: [pluginLineNumbers(), pluginCollapsibleSections()],
-      themes: ['github-dark', 'github-light'],
-      styleOverrides: {
-        codeFontFamily: 'jetbrains-mono',
-        uiFontFamily: 'jetbrains-mono',
-      },
-      themeCssSelector: (theme) => `[data-theme="${theme.type}"]`
-    }), 
-    mdx()
-  ],
+  integrations: [sitemap(), tailwind(), solid(), expressiveCode({
+    plugins: [pluginLineNumbers(), pluginCollapsibleSections()],
+    themes: ['github-dark', 'github-light'],
+    styleOverrides: {
+      codeFontFamily: 'jetbrains-mono',
+      uiFontFamily: 'jetbrains-mono',
+    },
+    themeCssSelector: (theme) => `[data-theme="${theme.type}"]`
+  }), mdx(), db()],
   markdown: {
     remarkPlugins: [remarkModifiedTime, resetRemark, remarkDirective, remarkAsides({}),remarkCollapse({})],
     rehypePlugins: [customRehypeLazyLoadImage]

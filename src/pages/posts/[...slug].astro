@@ -1,24 +1,25 @@
 ---
-import { getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro'
-import PostTitle from '../../components/PostTitle.astro';
-import BlogFooter from '../../components/BlogFooter.astro';
-import {getCollectionByName} from '../../utils/getCollectionByName';
-import {sortPostsByDate} from '../../utils/sortPostsByDate';
-import Donate from '../../components/Donate.astro'
-import {donate} from '../../consts';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollectionByName } from '@/utils/getCollectionByName';
+import BlogPost from '@/layouts/BlogPost.astro'
+import PostTitle from '@/components/PostTitle.astro';
+import BlogFooter from '@/components/BlogFooter.astro';
+import ViewCounter from '@/components/ViewCounter.astro';
+import Donate from '@/components/Donate.astro'
+import { sortPostsByDate } from '@/utils/sortPostsByDate';
+import { donate } from '@/consts';
 
 export async function getStaticPaths() {
   const blogEntries = (await getCollection('blog')).filter(({data}) => {
     return import.meta.env.PROD ? !data.draft : true
   });
 
-  return blogEntries.map(entry => ({
+  return blogEntries.map((entry: { slug: string; }) => ({
     params: { slug: entry.slug }, props: { entry },
   }));
 }
 
-const { entry } = Astro.props;
+const { entry, slug }: { entry: CollectionEntry<'blog'>, slug: string } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await entry.render();
 
 const lastModified = remarkPluginFrontmatter.lastModified
@@ -28,7 +29,7 @@ const posts = await getCollectionByName("blog");
 const sortPosts = sortPostsByDate(posts);
 
 const currentPostIndex = sortPosts.findIndex(
-  (postItem) => postItem.data.title === entry.data.title
+  (postItem: { data: { title: string; }; }) => postItem.data.title === entry.data.title
 );
 
 let prevPost: typeof sortPosts[0] | undefined;
