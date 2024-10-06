@@ -19,8 +19,13 @@ export async function getStaticPaths() {
   }));
 }
 
-const { entry, slug }: { entry: CollectionEntry<'blog'>, slug: string } = Astro.props;
-const { Content, remarkPluginFrontmatter } = await entry.render();
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+// const { entry, slug }: { entry: CollectionEntry<'blog'>, slug: string } = Astro.props;
+const { post } = Astro.props;
+const { Content, remarkPluginFrontmatter } = await post.render();
 
 const lastModified = remarkPluginFrontmatter.lastModified
 const readingTime = remarkPluginFrontmatter.readingTime
@@ -29,7 +34,7 @@ const posts = await getCollectionByName("blog");
 const sortPosts = sortPostsByDate(posts);
 
 const currentPostIndex = sortPosts.findIndex(
-  (postItem: { data: { title: string; }; }) => postItem.data.title === entry.data.title
+  (postItem: { data: { title: string; }; }) => postItem.data.title === post.data.title
 );
 
 let prevPost: typeof sortPosts[0] | undefined;
@@ -43,9 +48,9 @@ if (sortPosts[currentPostIndex + 1]) {
   nextPost = sortPosts[currentPostIndex + 1];
 }
 ---
-<BlogPost frontmatter={entry.data}>
+<BlogPost frontmatter={post.data}>
   <div>
-    <PostTitle slug={`/posts/${entry.slug}`} {...entry.data} lastModified={lastModified} readingTime={readingTime}></PostTitle>
+    <PostTitle slug={`/posts/${post.slug}`} {...post.data} lastModified={lastModified} readingTime={readingTime}></PostTitle>
     <div class="divider-horizontal"></div>
     <article class="markdown-body">
       <Content/>
@@ -79,9 +84,9 @@ if (sortPosts[currentPostIndex + 1]) {
         )
       }
     </div>
-    <BlogFooter title={entry.data.title} url={'posts/' + entry.slug} date={entry.data.date}></BlogFooter>
+    <BlogFooter title={post.data.title} url={'posts/' + post.slug} date={post.data.date}></BlogFooter>
     {
-      donate.enable && entry.data.donate &&
+      donate.enable && post.data.donate &&
       <Donate></Donate>
     }
   </div>
