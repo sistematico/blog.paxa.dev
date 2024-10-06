@@ -10,7 +10,8 @@ export async function getStaticPaths() {
   }));
 }
 
-const { entry: snippet }: { entry: CollectionEntry<'blog'> } = Astro.props;
+// const { entry, slug }: { entry: CollectionEntry<'snippets'>, slug: string } = Astro.props;
+const { entry: snippet }: { entry: CollectionEntry<'snippets'> } = Astro.props;
 // const { snippet } = Astro.props as { snippet: Snippet };
 const { Content } = await snippet.render();
 ---
