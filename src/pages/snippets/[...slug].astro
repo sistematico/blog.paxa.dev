@@ -1,24 +1,15 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import Base from '@/layouts/Base.astro';
+import { getCollection } from 'astro:content';
+// import { Picture } from 'astro:assets';
 
-interface Props {
-  snippet: CollectionEntry<'snippets'>;
+export async function getStaticPaths() {
+    const snippetsEntries = await getCollection('snippets');
+    return snippetsEntries.map((snippet) => ({
+        params: { slug: snippet.slug },
+        props: { snippet },
+    }));
 }
-
-// export async function getStaticPaths() {
-//   const snippetsEntries = await getCollection('snippets');
-//   return snippetsEntries.map((snippet: { slug: string; }) => ({
-//     params: { slug: snippet.slug },
-//     props: { snippet },
-//   }));
-// }
-
-
-// const { entry, slug }: { entry: CollectionEntry<'snippets'>, slug: string } = Astro.props;
-// const { entry: snippet }: { entry: CollectionEntry<'snippets'> } = Astro.props;
-// const { snippet } = Astro.props as { snippet: Snippet };
-// const { Content } = await snippet.render();
 
 const { snippet } = Astro.props;
 const { Content } = await snippet.render();
