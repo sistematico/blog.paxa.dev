@@ -19,18 +19,26 @@ export async function getStaticPaths() {
   }));
 }
 
-interface Props {
-  post: CollectionEntry<'blog'>;
-}
+// import { CollectionEntry, getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+type Props = CollectionEntry<'blog'>;
+
+const { slug } = Astro.params;
+
+const post = posts.find((page) => page.slug === slug);
+if (!post) return Astro.redirect("/404");
+
+
 
 // const { entry, slug }: { entry: CollectionEntry<'blog'>, slug: string } = Astro.props;
-const { post } = Astro.props;
+// const { post } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await post.render();
 
 const lastModified = remarkPluginFrontmatter.lastModified
 const readingTime = remarkPluginFrontmatter.readingTime
 
-const posts = await getCollectionByName("blog");
+// const posts = await getCollectionByName("blog");
 const sortPosts = sortPostsByDate(posts);
 
 const currentPostIndex = sortPosts.findIndex(
