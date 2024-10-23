@@ -22,5 +22,17 @@
         "url": "https://www.jetbrains.com/pt-br/lp/mono/"
       }
     ]
+  },
+  {
+    "cat": "Astro",
+    "desc": "Alguns recursos, artigos e tutoriais sobre Astro",
+    "links": [
+      {
+        "name": "Astro DB",
+        "url": "https://www.vorillaz.com/astro-views"
+      }
+    ]
   }
+
+  
 ]

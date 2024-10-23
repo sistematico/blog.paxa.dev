@@ -1,8 +1,9 @@
 ---
 import { formatDate } from '@/utils/formatDate';
 import { dealLabel } from '@/utils/dealLabel';
+import ViewCounter from '@/components/ViewCounter.astro';
 import { t } from '@/i18n/utils';
-const { title, date, category, tags, lastModified = '', draft = false, readingTime = {}, views = 0 } = Astro.props;
+const { title, slug = '', date, category, tags, lastModified = '', draft = false, readingTime = {}, showViews = true } = Astro.props;
 ---
 
 <div class="border-b-1">
@@ -62,17 +63,19 @@ const { title, date, category, tags, lastModified = '', draft = false, readingTi
         <i class="ri-hourglass-fill"/>
         <div class="tag">{Math.ceil(readingTime.minutes)}{t('title.minutes')}</div>
         <div class="divider-vertical"/>
+        <i class="ri-article-line"/>        
         <div class="tag">{readingTime.words}{t('title.words')}</div>
       )
     }
 
     <!-- views -->
     {
-      views && (
+      showViews && (
         <div class="divider-vertical" />
-        <i class="ri-hourglass-fill"/>
-        <div class="divider-vertical"/>
-        <div class="tag"> views {views}</div>
+        <i class="ri-eye-line"/>
+        <div class="tag">
+          <ViewCounter slug={slug} />
+        </div>
       )
     }
   </div>

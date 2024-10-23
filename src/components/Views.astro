@@ -1,0 +1,18 @@
+---
+import { db, views, eq } from "astro:db";
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const found = await db
+    .select({
+      count: views.count,
+    })
+    .from(views)
+    .where(eq(views.slug, slug ));
+const count = found[0]?.count || 0;
+---
+
+<span>Visualizações: {count}</span>

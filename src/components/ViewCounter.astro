@@ -26,6 +26,4 @@ try {
 }
 ---
 
-<div>
-  <p>Views: {item.count}</p>
-</div>
+<span>Visualizações: {Array.isArray(item) ? item[0]?.count : item.count}</span>

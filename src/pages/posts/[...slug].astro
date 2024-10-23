@@ -1,10 +1,10 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { getCollectionByName } from '@/utils/getCollectionByName';
+// import { getCollectionByName } from '@/utils/getCollectionByName';
 import BlogPost from '@/layouts/BlogPost.astro'
 import PostTitle from '@/components/PostTitle.astro';
 import BlogFooter from '@/components/BlogFooter.astro';
-import ViewCounter from '@/components/ViewCounter.astro';
+// import ViewCounter from '@/components/ViewCounter.astro';
 import Donate from '@/components/Donate.astro'
 import { sortPostsByDate } from '@/utils/sortPostsByDate';
 import { donate } from '@/consts';
@@ -25,11 +25,10 @@ const posts = await getCollection('blog');
 type Props = CollectionEntry<'blog'>;
 
 const { slug } = Astro.params;
+// const slug = Astro.params.slug;
 
 const post = posts.find((page) => page.slug === slug);
 if (!post) return Astro.redirect("/404");
-
-
 
 // const { entry, slug }: { entry: CollectionEntry<'blog'>, slug: string } = Astro.props;
 // const { post } = Astro.props;
@@ -58,7 +57,10 @@ if (sortPosts[currentPostIndex + 1]) {
 ---
 <BlogPost frontmatter={post.data}>
   <div>
-    <PostTitle slug={`/posts/${post.slug}`} {...post.data} lastModified={lastModified} readingTime={readingTime}></PostTitle>
+    <!-- <PostTitle slug={`/posts/${post.slug}`} {...post.data} lastModified={lastModified} readingTime={readingTime} /> -->
+    <PostTitle slug={post.slug} {...post.data} lastModified={lastModified} readingTime={readingTime} />
+    <!-- <div class="divider-horizontal"></div> -->
+    <!-- <ViewCounter slug={post.slug} /> -->
     <div class="divider-horizontal"></div>
     <article class="markdown-body">
       <Content/>
