@@ -1,7 +1,8 @@
 {
   "name": "paxa-blog",
+  "author": "Paxá <paxa@paxa.dev> (https://paxa.dev)",
+  "version": "0.0.3",
   "type": "module",
-  "version": "0.0.2",
   "scripts": {
     "dev": "bunx --bun astro dev",
     "build": "bunx --bun astro build",

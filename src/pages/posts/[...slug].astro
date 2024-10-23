@@ -5,6 +5,7 @@ import BlogPost from '@/layouts/BlogPost.astro'
 import PostTitle from '@/components/PostTitle.astro';
 import BlogFooter from '@/components/BlogFooter.astro';
 // import ViewCounter from '@/components/ViewCounter.astro';
+import ViewCounter from '@/components/Views.tsx';
 import Donate from '@/components/Donate.astro'
 import { sortPostsByDate } from '@/utils/sortPostsByDate';
 import { donate } from '@/consts';
@@ -61,6 +62,8 @@ if (sortPosts[currentPostIndex + 1]) {
     <PostTitle slug={post.slug} {...post.data} lastModified={lastModified} readingTime={readingTime} />
     <!-- <div class="divider-horizontal"></div> -->
     <!-- <ViewCounter slug={post.slug} /> -->
+    <!-- <ViewCounter client:only slug={post.slug} /> -->
+    <ViewCounter client:only="solid-js" slug={post.slug} />
     <div class="divider-horizontal"></div>
     <article class="markdown-body">
       <Content/>
