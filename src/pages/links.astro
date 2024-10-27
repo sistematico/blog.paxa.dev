@@ -1,0 +1,25 @@
+---
+import BaseLayout from '@/layouts/Base.astro';
+import links from '@/data/links.json';
+const favoritos = links.sort((a, b) => a.cat.localeCompare(b.cat));
+---
+
+<BaseLayout>
+  {
+    favoritos.map(item => (
+      <div>
+        <h3 class="text-2xl font-bold text-skin-base">{item.cat}</h3>
+        <p class="text-sm italic text-skin-base mb-3">{item.desc}</p>
+        <ul class="list-disc list-inside space-y-2">
+          {
+            item.links.map(link => (
+              <li>
+                <a href={link.url} class="hover:text-skin-primary" target="_blank">{link.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    ))
+  }
+</BaseLayout>

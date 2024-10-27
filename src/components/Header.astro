@@ -1,18 +1,22 @@
 ---
+import { site } from '@/consts';
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
 <nav class="bg-monokai-dark fixed w-full top-0 z-10">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
       <div class="flex items-center">
-        <img class="h-10 w-auto" src="/images/logo.svg" alt="Your Company">
-        <span class="ml-2 text-white text-3xl font-extrabold">Paxá</span>
+        <img class="h-10 w-auto" src="/images/logo.svg" alt={site.title}>
+        <span class="mt-1 ml-2 text-white text-3xl font-extrabold">{site.title}</span>
       </div>
       <div class="flex flex-1 items-center justify-end sm:items-stretch sm:justify-end">
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-            <a href="#" class="rounded-md bg-monokai-dark px-3 py-2 text-white" aria-current="page">Dashboard</a>
-            <a href="#" class="rounded-md px-3 py-2 text-monokai-foreground hover:bg-monokai-background hover:text-white">Team</a>            
+            <a href="/" class={currentPath === "" ? "rounded-md bg-monokai-dark px-3 py-2 text-white" : "rounded-md px-3 py-2 text-monokai-foreground hover:bg-monokai-background hover:text-white"}>Início</a>
+            <a href="/projetos" class={currentPath === "projetos" ? "rounded-md bg-monokai-dark px-3 py-2 text-white" : "rounded-md px-3 py-2 text-monokai-foreground hover:bg-monokai-background hover:text-white"}>Projetos</a>            
+            <a href="/links" class={currentPath === "links" ? "rounded-md bg-monokai-dark px-3 py-2 text-white" : "rounded-md px-3 py-2 text-monokai-foreground hover:bg-monokai-background hover:text-white"}>Favoritos</a>            
           </div>
         </div>
       </div>
@@ -39,10 +43,9 @@
   <!-- Mobile menu, show/hide based on menu state -->
   <div data-mobile-menu class="sm:hidden hidden" id="mobile-menu" data-state="close">
     <div class="space-y-1 px-2 pb-3 pt-2">
-      <a href="#" class="block rounded-md bg-monokai-dark px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-monokai-comment hover:bg-monokai-background hover:text-white">Team</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-monokai-comment hover:bg-monokai-background hover:text-white">Projects</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-monokai-comment hover:bg-monokai-background hover:text-white">Calendar</a>
+      <a href="/" class="block rounded-md bg-monokai-dark px-3 py-2 text-base font-medium text-white">Início</a>
+      <a href="/projetos" class="block rounded-md px-3 py-2 text-base font-medium text-monokai-comment hover:bg-monokai-background hover:text-white">Projetos</a>
+      <a href="/links" class="block rounded-md px-3 py-2 text-base font-medium text-monokai-comment hover:bg-monokai-background hover:text-white">Favoritos</a>
     </div>
   </div>
 </nav>

@@ -2,5 +2,7 @@
 
 PATH=$PATH:/home/nginx/.bun/bin
 
+# git clean -fxd
+
 bun install
 bun run build
