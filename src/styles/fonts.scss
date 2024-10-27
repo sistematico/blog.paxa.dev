@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/nunito/Nunito.woff') format('woff'),
+    url('/fonts/nunito/Nunito.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Persian';
+  src: url('/fonts/persian/Persian.woff2') format('woff2'),
+      url('/fonts/persian/Persian.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
