@@ -1,38 +1,8 @@
 [
   {
-    "cat": "Design",
+    "name": "Design",
     "desc": "Ferramentas para design e edição de imagens",
-    "links": [
-      {
-        "name": "Hex Color To CSS Filter Converter",
-        "url": "https://isotropic.co/tool/hex-color-to-css-filter/"
-      }
-    ]
-  },
-  {
-    "cat": "Fontes",
-    "desc": "Algumas fontes para editores de texto e afins",
-    "links": [
-      {
-        "name": "Monaspace",
-        "url": "https://monaspace.githubnext.com/"
-      },
-      {
-        "name": "JetBrains Mono",
-        "url": "https://www.jetbrains.com/pt-br/lp/mono/"
-      }
-    ]
-  },
-  {
-    "cat": "Astro",
-    "desc": "Alguns recursos, artigos e tutoriais sobre Astro",
-    "links": [
-      {
-        "name": "Astro DB",
-        "url": "https://www.vorillaz.com/astro-views"
-      }
-    ]
-  }
-
-  
+    "url": "https://monaspace.githubnext.com/",
+    "repo": "https://monaspace.githubnext.com/"
+  } 
 ]

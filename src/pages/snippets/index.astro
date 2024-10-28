@@ -1,0 +1,30 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Base from "@/layouts/Base.astro";
+import Card from "@/components/Card.astro";
+
+type Snippet = CollectionEntry<'snippets'>;
+const snippets = await getCollection("snippets");
+---
+
+<Base
+  title="Snippets de Código"
+  description="Uma coleção de snippets que são comumente usados ​​na resolução de problemas."
+>
+  <h2 class="text-2xl font-bold text-skin-base py-0">Snippets</h2>
+  <p class="mb-3 my-0">
+    Alguns snippets que me ajudaram e talvez possam te ajudar também.
+  </p>
+  <div class="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
+    {
+      snippets.map((snippet: Snippet) => (
+        <Card
+          key={snippet.slug}
+          title={snippet.data.title}
+          slug={snippet.slug}
+          description={snippet.data.description}
+        />
+      ))
+    }
+  </div>
+</Base>

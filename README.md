@@ -1,47 +1,69 @@
-# Astro Starter Kit: Minimal
+# 🐪 Paxá Blog
 
-```sh
-npm create astro@latest -- --template minimal
+[![Deploy](https://github.com/sistematico/blog.paxa.dev/actions/workflows/deploy.yml/badge.svg)](https://github.com/sistematico/blog.paxa.dev/actions/workflows/deploy.yml)
+
+Meu blog, ~baseado no tema [Astro Yi](https://github.com/cirry/astro-yi) usando o [Astro](https://astro.build)~, feito usando o [Astro](https://astro.build) e [Tailwind CSS](https://tailwindcss.com).
+
+### 🌎 Demo
+
+- [Blog](https://blog.paxa.dev)
+
+#### 🚀 Instalação e desenvolvimento usando o Bun
+
+Para a instalação é recomendado o uso do `bun >= 1.1.27` ou `nodejs >= 18`，`pnpm >= 8`.
+
+```bash
+git clone https://github.com/sistematico/blog.paxa.dev.git
+cd blog.paxa.dev
+bun install  # instala as dependências
+bun run dev # inicia uma cópia de desenvolvimento em localhost:4321
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+```bash
+bun run build # constrói um build de produção em ./dist
+```
+After the packaging is completed, Upload the `dist` folder to the web server directory.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🔥 Configuração
 
-## 🚀 Project Structure
+No arquivo `src/const.ts`, você pode modificar o site de acordo com suas necessidades.
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```ts
+export const site = {
+  title: 'Paxá Blog',
+  description: 'Meu blog pessoal',
+}
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 📰 Referências
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- [https://bun.sh/guides/install/workspaces](https://bun.sh/guides/install/workspaces)
+- [https://bun.sh/docs/cli/install#workspaces](https://bun.sh/docs/cli/install#workspaces)
+- [https://bun.sh/docs/install/workspaces](https://bun.sh/docs/install/workspaces)
+- [https://github.com/colinhacks/bun-workspaces](https://github.com/colinhacks/bun-workspaces)
+- [https://docs.npmjs.com/cli/v10/using-npm/workspaces](https://docs.npmjs.com/cli/v10/using-npm/workspaces)
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🕐 Alterações
 
-## 🧞 Commands
+- `2024/10/28` - Re-escrita completa do Blog, Astro `v4.16.7`, tema próprio(usando a paleta de cores "Sonokai").
 
-All commands are run from the root of the project, from a terminal:
+## ⭐ Créditos
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Este projeto foi criado usando o `bun init` no bun `v1.1.33`.
+[Bun](https://bun.sh) é um runtime JavaScript "tudo-em-um" extremamente rápido.
 
-## 👀 Want to learn more?
+Sem a ajuda destas linguagens/ferramentas/frameworks/pessoas nada disso seria possível:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Astro](https://astro.build)
+- [TypeScript](https://typescriptlang.org)
+- [Bun](https://bun.sh)
+
+### 👏 Ajude
+
+Se o meu trabalho foi útil de qualquer maneira, considere doar qualquer valor através do das seguintes plataformas:
+
+[![LiberaPay](https://img.shields.io/badge/LiberaPay-gray?logo=liberapay&logoColor=white&style=flat-square)](https://liberapay.com/sistematico/donate) [![PagSeguro](https://img.shields.io/badge/PagSeguro-gray?logo=pagseguro&logoColor=white&style=flat-square)](https://pag.ae/bfxkQW) [![ko-fi](https://img.shields.io/badge/ko--fi-gray?logo=ko-fi&logoColor=white&style=flat-square)](https://ko-fi.com/K3K32RES9)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-gray?logo=buy-me-a-coffee&logoColor=white&style=flat-square)](https://www.buymeacoffee.com/sistematico) [![Open Collective](https://img.shields.io/badge/Open_Collective-gray?logo=opencollective&logoColor=white&style=flat-square)](https://opencollective.com/sistematico)
+[![Patreon](https://img.shields.io/badge/Patreon-gray?logo=patreon&logoColor=white&style=flat-square)](https://patreon.com/sistematico)
+
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/sistematico?label=Github%20Sponsors)](https://github.com/sponsors/sistematico)
